@@ -9,10 +9,13 @@ permalink: /
 
 **PHRAPL --  documentation**
 =======
+
+# ****<font color='#006579'>PH</font>ylogeographic infe**<font color='#006579'>R</font>ence using **<font color='#006579'>AP</font>proximated **<font color='#006579'>L</font>ikelihood**
+
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/phrapl_logo.png?raw=true" width="200" height="200" />
 
 
-## Why to use {: .fw-700 }PHRAPL{: .fw-700 }?
+## Why to use **<font color='#006579'>PHRAPL</font>**?
 Phylogeographic research aims to understand the recent history of species. Over the last decades, researchers have increasingly incorporated demographic models in order to estimate parameters (i.e., divergence times, population sizes, and rates of migration and expansion) that can contribute phylogeographic inference. 
 Typically, this is conducted via the use of software packages that contain specified models (n-island models or fixed topologies). Alternatively, simulation-based approaches allow researchers to customize models for the particular details of their system, and may be useful in testing preexisting biogeographic hypotheses. Because the demographic model is central to the analysis in either case, researchers may wish to assess the appropriateness of their model to the data. `PHRAPL` is designed to give such a tool to researchers. 
 
