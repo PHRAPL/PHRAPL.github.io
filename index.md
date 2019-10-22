@@ -9,6 +9,8 @@ permalink: /
 
 PHRAPL --  documentation
 =======
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/phrapl_logo.png?raw=true" width="200" height="200" />
+
 
 ## Why to use `PHRAPL`?
 Phylogeographic research aims to understand the recent history of species. Over the last decades, researchers have increasingly incorporated demographic models in order to estimate parameters (i.e., divergence times, population sizes, and rates of migration and expansion) that can contribute phylogeographic inference. 
