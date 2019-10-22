@@ -1,2 +1,7 @@
+title: PHRAPL documentation
+description: Step by step tutorial for demographic model selection using PHRAPL
+baseurl: "PHRAPL.github.io" # the subpath of your site, e.g. /blog
+url: "https://PHRAPL.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
 #theme: jekyll-theme-minimal
 remote_theme: pmarsceill/just-the-docs
