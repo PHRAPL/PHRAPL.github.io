@@ -19,6 +19,7 @@ Typically, this is conducted via the use of software packages that contain speci
 
 ## How **<font color='#006579'>PHRAPL</font>** works?
 `PHRAPL` simulates genealogies under a wide range of demographic models and compares the empirical genealogies to the simulated gene tree distributions. Demographic models that are probable given the data will contain many genealogies that match the estimated gene trees. Because the proportion of matching gene trees for a given model is equivalent to the probability of the data given the model and parameter values, we can use this value in an information theoretic framework to evaluate the relative weight of all models. This provides the researcher with an independent assessment of both the best model, given the data as well as the ability to calculate the model likelihoods of classes of models (e.g., n-island vs. isolation models).
+Watch [these YouTube videos](https://www.youtube.com/watch?v=UC4Mj1K6c0k) to learn more about `PHRAPL`.
 
 
 ### CODE
@@ -35,5 +36,9 @@ Typically, this is conducted via the use of software packages that contain speci
 - Carstens BC, Morales AE, Jackson N, O’Meara BC (2017) [Objective choice of Phylogeographic Models](https://www.sciencedirect.com/science/article/pii/S1055790317303160?via%3Dihub). Molecular Phylogenetics and Evolution. 116:136-140.
 
 
+### Do you have a question about **<font color='#006579'>PHRAPL</font>** or want to report a bug?
+Post it in the [phrapl-users](https://groups.google.com/forum/#!forum/phrapl-users) google group.
 
-<sub>Template acknowledgement: <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.<sub>
+
+
+<sub>Acknowledgement:Template modified from <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.<sub>
