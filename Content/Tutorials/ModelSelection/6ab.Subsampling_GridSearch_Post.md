@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Simulated data - 2 populations
+title: Empirical data - 2 populations
 parent: Demographic model selection
 nav_order: 2
 ---
