@@ -3,7 +3,7 @@ layout: default
 title: Input Files
 nav_order: 2
 has_children: true
-permalink: /Contents/2.InputFiles
+permalink: /Content/2.InputFiles
 ---
 
 INPUT FILES
