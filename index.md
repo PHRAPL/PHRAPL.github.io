@@ -7,7 +7,7 @@ permalink: /
 ---
 
 
-PHRAPL --  documentation
+**PHRAPL --  documentation**
 =======
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/phrapl_logo.png?raw=true" width="200" height="200" />
 
