@@ -3,6 +3,7 @@ layout: default
 title: Home
 nav_order: 1
 description: "Introduction"
+has_children: true
 permalink: /
 ---
 
@@ -34,6 +35,12 @@ Watch [these YouTube videos](https://www.youtube.com/watch?v=UC4Mj1K6c0k) to lea
 - Jackson N, Carstens BC, Morales AE, O’Meara BC (2017) [Species delimitation with gene flow](https://academic.oup.com/sysbio/article/66/5/799/2726792?searchresult=1). Systematic Biology. 66:799-812.
 - Morales AE, Jackson N, Dewey T, O’Meara BC, Carstens BC (2017) [Speciation with gene flow in North American Myotis bats](https://academic.oup.com/sysbio/article/66/3/440/2682289). Systematic Biology. 66:440-452.
 - Carstens BC, Morales AE, Jackson N, O’Meara BC (2017) [Objective choice of Phylogeographic Models](https://www.sciencedirect.com/science/article/pii/S1055790317303160?via%3Dihub). Molecular Phylogenetics and Evolution. 116:136-140.
+
+
+### FUNDING
+The National Science Foundation funded this research (DEB 1257784/DEB 1257669). 
+The Ohio Supercomputer Center allocated resources to support part of this study (PAS1184).
+Additional computational resources were allocated by the Carstens and O'Meara Labs.
 
 
 ### Do you have a question about **<font color='#006579'>PHRAPL</font>** or want to report a bug?
