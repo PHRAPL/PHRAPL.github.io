@@ -46,12 +46,18 @@ Watch [these YouTube videos](https://www.youtube.com/watch?v=UC4Mj1K6c0k) to lea
 Post questions and comments in the [phrapl-users](https://groups.google.com/forum/#!forum/phrapl-users) google group.
 
 ---
+### THE **<font color='#006579'>PHRAPL</font>** TEAM
+(listed in alphabetical order by last name)
+- [Bryan Carstens](https://carstenslab.osu.edu)
+- [Nathan Jackson](https://www.linkedin.com/in/ndjaxon)
+- [Ariadna Morales](https://ariadnamorales.info)
+- [Brian O'Meara](http://brianomeara.info/)
+
+---
 ### FUNDING
 The National Science Foundation funded this research (DEB 1257784/DEB 1257669). 
 The Ohio Supercomputer Center allocated resources to support part of this study (PAS1184).
 Additional computational resources were allocated by the Carstens and O'Meara Labs.
 
-
-
-
+---
 <sub>Acknowledgement:Template modified from <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.<sub>
