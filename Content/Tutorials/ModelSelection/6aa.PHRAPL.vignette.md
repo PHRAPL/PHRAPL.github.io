@@ -8,7 +8,7 @@ nav_order: 1
 # Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**
 {: .no_toc }
 
-The purpose of this tutorial is to provide a brief introduction for using `PHRAPL`. It will walk you through the necessary steps required for installing the package, preparing a dataset and model set using R, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a `PHRAPL` analysis, which could get a bit confusing for someone using the program for the first time. For this reason, **we have highlighted with <font color="#ff7700">red asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset.** 
+The purpose of this tutorial is to provide a brief introduction for using `PHRAPL`. It will walk you through the necessary steps required for installing the package, preparing a dataset and model set using R, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a `PHRAPL` analysis, which could get a bit confusing for someone using the program for the first time. For this reason, **we have highlighted with <font color="#ff7700">orange asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset.** 
 
 ### **<font color='#ff7700'>This tutorial assumes you have read the <font color='#006579'>PHRAPL</font> paper.</font>**
 {: .no_toc }
