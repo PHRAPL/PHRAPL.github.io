@@ -20,11 +20,12 @@ permalink: /
 
 ## Why to use **<font color='#006579'>PHRAPL</font>**?
 Phylogeographic research aims to understand the recent history of species. Over the last decades, researchers have increasingly incorporated demographic models in order to estimate parameters (i.e., divergence times, population sizes, and rates of migration and expansion) that can contribute phylogeographic inference. 
-Typically, this is conducted via the use of software packages that contain specified models (n-island models or fixed topologies). Alternatively, simulation-based approaches allow researchers to customize models for the particular details of their system, and may be useful in testing preexisting biogeographic hypotheses. Because the demographic model is central to the analysis in either case, researchers may wish to assess the appropriateness of their model to the data. `PHRAPL` is designed to give such a tool to researchers. 
+Typically, this is conducted via the use of software packages that contain specified models (n-island models or fixed topologies). Alternatively, simulation-based approaches allow researchers to customize models for the particular details of their system, and may be useful in testing preexisting biogeographic hypotheses. Because the demographic model is central to the analysis in either case, researchers may wish to assess the appropriateness of their model to the data. `PHRAPL` is designed to provide such a tool to researchers. 
 
 ## How **<font color='#006579'>PHRAPL</font>** works
 `PHRAPL` simulates genealogies under a wide range of demographic models and compares the empirical genealogies to the simulated gene tree distributions. Demographic models that are probable given the data will contain many genealogies that match the estimated gene trees. Because the proportion of matching gene trees for a given model is equivalent to the probability of the data given the model and parameter values, we can use this value in an information theoretic framework to evaluate the relative weight of all models. This provides the researcher with an independent assessment of both the best model, given the data as well as the ability to calculate the model likelihoods of classes of models (e.g., n-island vs. isolation models).
-Watch [these YouTube videos](https://www.youtube.com/watch?v=UC4Mj1K6c0k) to learn more about `PHRAPL`.
+Watch [these YouTube videos](https://www.youtube.com/watch?v=UC4Mj1K6c0k) to learn more about `PHRAPL`. After installing `PHRAPL`, type `library(help=phrapl)` to get a list of functions with documentation. To open a help file for a particular function, type `?function_name`.
+
 
 ---
 ### CODE
@@ -41,14 +42,15 @@ Watch [these YouTube videos](https://www.youtube.com/watch?v=UC4Mj1K6c0k) to lea
 - Carstens BC, Morales AE, Jackson N, O’Meara BC (2017) [Objective choice of Phylogeographic Models](https://www.sciencedirect.com/science/article/pii/S1055790317303160?via%3Dihub). Molecular Phylogenetics and Evolution. 116:136-140.
 
 
+### DO YOU HAVE A QUESTION ABOUT **<font color='#006579'>PHRAPL</font>** OR WANT TO REPORT A BUG?
+Post questions and comments in the [phrapl-users](https://groups.google.com/forum/#!forum/phrapl-users) google group.
+
+
 ### FUNDING
 The National Science Foundation funded this research (DEB 1257784/DEB 1257669). 
 The Ohio Supercomputer Center allocated resources to support part of this study (PAS1184).
 Additional computational resources were allocated by the Carstens and O'Meara Labs.
 
-
-### Do you have a question about **<font color='#006579'>PHRAPL</font>** or want to report a bug?
-Post it in the [phrapl-users](https://groups.google.com/forum/#!forum/phrapl-users) google group.
 
 
 
