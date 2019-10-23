@@ -5,40 +5,13 @@ parent: Demographic model selection
 nav_order: 1
 ---
 
+# Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**
+{: .no_toc }
+_modified from vignette designed by Nathan Jackson and included in `PHRAPL` repo_
 
+1. TOC
+{:toc}
 
-
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@ariadnamorales 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-4
-51bomeara/phrapl
- Code Issues 13 Pull requests 0 Actions Projects 0 Wiki Security Insights
-phrapl/doc/phrapl_vignette.Rmd
-@ndjaxon ndjaxon Updating the vignette
-08068b0 on Mar 8
-588 lines (397 sloc)  39.5 KB
-  
----
-title: <center>Setting Up and Running PHRAPL</center>
-author: <center><font size="4">*by Nathan Jackson*</center></font>
-date: <center><font size="2">*Last updated on March 08, 2019*</center></font>
-output: rmarkdown::html_vignette
-smart: false
-vignette: >
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteIndexEntry{Setting Up and Running PHRAPL}
-  %\VignetteEncoding{UTF-8}
 ---
 
 PHRAPL is a phylogeographic model selection method based on approximate likelihoods. This method estimates the probability of observing a set of gene trees under a model by calculating the frequency at which observed tree topologies occur in a distribution of expected tree topologies. The relative probability of models within a set can be assessed using Akaike information criterion (AIC). Because the method uses gene tree topologies only (excluding branch lengths), it can, relatively quickly, compare the fit of a broad range of models that include coalescence times, migration rates, and distinct/fluctuating population sizes, potentially all acting simultaneously.
@@ -88,7 +61,7 @@ Also, for Mac users, if you experience issues with `rgl` properly installing, an
 Now PHRAPL is ready to run. Type `library(help=phrapl)` to get a list of functions with documentation. To open a help file for a particular function, type `?function_name`.
 
 
-##II. Importing your dataset into R
+## II. Importing your dataset into R
 
 Three R objects must be initially specified to run a PHRAPL analysis:
 
@@ -96,7 +69,7 @@ Three R objects must be initially specified to run a PHRAPL analysis:
 2. A table that assigns tips of the trees to populations or species
 3. A vector specifying the number of tips to subsample per population
 
-###*1. Importing trees*
+### *1. Importing trees*
 
 If you are beginning with sequence data, note that PHRAPL includes a function for inferring gene trees from sequence data by calling up RAxML (type `?RunRaxml` for more information on using this function). If your sequence data is in nexus format, there is also a function for converting your data to phylip format, which is the required format for running RAxML (type `?RunSeqConverter`). This function calls up a Perl script written by Olaf R.P. Bininda-Emonds.
 
@@ -153,7 +126,7 @@ To import an assignment table for our toy dataset, type
 ```
 <font size="4" face="courier" color="FA1704">*****************************************************************</font>
 
-###*3. Specifying the number of tips to subsample (popAssignments)*
+### *3. Specifying the number of tips to subsample (popAssignments)*
 
 Rather than fitting datasets to models using all the tree tips simultaneously, PHRAPL uses iterative subsamples of tips, allowing for the method to work in a manageable tree space. Thus, the number of tips to subsample per population must be specified by the user.
 
@@ -173,7 +146,7 @@ We recommend generally subsampling 3 or 4 tips per population. However, subsampl
 
 
 
-##III. Subsampling trees
+## III. Subsampling trees
 
 As discussed above, approximate likelihood calculation as currently implemented in PHRAPL requires that trees not be too large (~16 tips or fewer) such that there exists a measurable chance of observing the empirical tree within a distribution of simulated trees. Since most phylogeographic datasets are considerably larger than this, replicate subsamples of trees must typically be analyzed. Trees are subsampled (randomly, with replacement) using the function `PrepSubsampling`, which requires the following arguments:
 
@@ -218,7 +191,7 @@ Finally, keep in mind that PHRAPL requires that trees be rooted, but not that th
 *****
 
 
-##IV. Calculating degeneracy weights for subsampled trees
+## IV. Calculating degeneracy weights for subsampled trees
 
 As a way of reducing the tree space that PHRAPL faces when calculating the probability of a gene topology, all tip labels *within* populations are essentially ignored when assessing matches between simulated and observed trees. If the only differences between two trees consist of intra-population discrepancies, then these trees are considered to be "matches". To adjust lnLs in a way that accounts for this degeneracy of intra-population tip labels, topological weights are calculated based on the proportion of times that the intra-population permuting of labels across a tree results in the same topology. These weights can be calculated during the PHRAPL search analysis - to do this, when running `GridSearch` (described below), set `subsampleWeights.df = NULL` and `doWeights = TRUE`. However, when there are more than a few tips in the subsampled trees, this can be time consuming, and thus it is helpful to calculate these upfront. To get these weights beforehand, you can use the function `GetPermutationWeightsAcrossSubsamples`, which takes as input `popAssignments` and the set of subsampled trees. For our toy dataset, type  
 
@@ -233,11 +206,11 @@ As with `PrepSubsampling`, this function produces a list of weights tables with 
 
 
 
-##V. Generating models
+## V. Generating models
 
 The last thing we need prior to analyzing the dataset is a set of models to test. This set of models can be constructed "one at a time", if you have specific *a priori* histories to compare, or a set of "all possible models" can be generated automatically given a specified list of criteria. Or of course you can combine these approaches. This section first describes the structure of models in PHRAPL and then outlines how to go about generating a model set using these two approaches.
 
-###*1. Some background on model structure*
+### *1. Some background on model structure*
 
 A model analyzed by PHRAPL is called a `migrationIndividual`, which contains matrices that define the unique coalescence (`collapseMatrix`), population size (`n0multiplierMap`), population growth (`growthMap`), and migration (`migrationArray`) parameters included in that model. A set of models (confusedly) is also called a `migrationArray`, which is an R list of `migrationIndividual`s. All four parameter matrices must be included within a `migrationIndividual`, even if a parameter type is excluded from the model. 
 
@@ -294,7 +267,7 @@ and the `growthMap` would be
 [3,]    0    0
 ````
 
-###*2. Generating a set of models*
+### *2. Generating a set of models*
 
 One advantage of PHRAPL is that it can generate and analyze a large set of models relatively quickly. A model set (`migrationArray`) consisting of all possible models, given certain constraints such as the number of free parameters, *K*, available overall (set by `maxK`), or available for a particular parameter (set by `maxN0K`, `maxGrowthK`, and `maxMigrationK`), can be generated using the `GenerateMigrationIndividuals` function. This generates a model set that includes all possible combinations of parameter indices, given the constraints.
 
@@ -357,7 +330,7 @@ If you have a `migrationArray` produced under a previous version of PHRAPL that 
 
 *****
 
-###*3. Generating a single* a priori *model*
+### *3. Generating a single* a priori *model*
 
 What if, instead of or in addition to generating a list of possible models, you would like to create a specific
 model for which you have some *a priori* reason to consider alone, or to add to a larger `migrationArray` as generated above? To do this, you can use the function `MakingMigrationIndividualsOneAtATime`, whose purpose is to create a single *a priori* `migrationIndividual` for a specified coalescence, n0multiplier, growth, and migration history. The four corresponding arguments for this function are `collapseList`, `n0multiplierMapList`, `growthList` and `migrationList`.
@@ -454,7 +427,7 @@ Thus, the same `migrationIndividual` as above can be produced by simply typing
 One can add additional complexity to generated models using the function `AddEventToMigrationArray`. This function can add additional demographic shifts over time that do not correspond to a splitting event. For example, if one would like to posit a divergence event that occurs when populations are in allopatry, followed by the resumption of migration at a latter time upon secondary contact, using `AddEventToMigrationArray`, one can add a new migration matrix to an existing model that is applied prior to the coalescence event. For details about how to add such demographic events that are not tied to a coalescence events to a model, see the R documentation (`?AddEventToMigrationArray`).
 
 
-##VI. Running a PHRAPL grid search
+## VI. Running a PHRAPL grid search
 
 Once you have a model set in hand and the data have been subsampled and weights have been calculated, you are finally ready to calculate AIC values and parameter estimates for your dataset under the models using the `GridSearch` function. 
 
@@ -498,7 +471,7 @@ Grid points with an `AIC = NA` signal parameter combinations that did not yield 
     
 
 
-##VII. Saving, compiling, summarizing, and visualizing results
+## VII. Saving, compiling, summarizing, and visualizing results
 
 The `ConcatenateResults` function can compile results from across separate runs into a single table. If you are analyzing models in separate runs, you will want to save `GridSearch` results in a file to access later, e.g.:  
 
