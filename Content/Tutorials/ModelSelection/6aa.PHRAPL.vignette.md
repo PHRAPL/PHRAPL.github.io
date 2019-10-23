@@ -7,32 +7,35 @@ nav_order: 1
 
 # Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**
 {: .no_toc }
-_modified from [vignette](https://github.com/bomeara/phrapl/blob/master/doc/phrapl_vignette.pdf) designed by Nathan Jackson and included in the compiled version of `PHRAPL`_
 
 1. TOC
 {:toc}
+_modified from [vignette](https://github.com/bomeara/phrapl/blob/master/doc/phrapl_vignette.pdf) designed by Nathan Jackson and included in the compiled version of `PHRAPL`_
 
 ---
 
-PHRAPL is a phylogeographic model selection method based on approximate likelihoods. This method estimates the probability of observing a set of gene trees under a model by calculating the frequency at which observed tree topologies occur in a distribution of expected tree topologies. The relative probability of models within a set can be assessed using Akaike information criterion (AIC). Because the method uses gene tree topologies only (excluding branch lengths), it can, relatively quickly, compare the fit of a broad range of models that include coalescence times, migration rates, and distinct/fluctuating population sizes, potentially all acting simultaneously.
+### Goal
 
-The purpose of this vignette is to provide a brief tutorial for using this method. It will walk you through the necessary steps required for installing the package, preparing a dataset and model set using R, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a PHRAPL analysis, which could get a bit confusing for someone using the program for the first time. For this reason, we have highlighted with <font color="FA1704">red asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset. 
+The purpose of this vignette is to provide a brief tutorial for using this method. It will walk you through the necessary steps required for installing the package, preparing a dataset and model set using R, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a PHRAPL analysis, which could get a bit confusing for someone using the program for the first time. For this reason, **we have highlighted with <font color="FA1704">red asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset.** 
+
+### This tutorial assumes you have read the **<font color='#006579'>PHRAPL</font>** paper
 
 This tutorial will assume that the reader already has a basic understanding of how PHRAPL works and the problems it is meant to address. The focus here will rather be on the practical issues surrounding the analysis of a dataset. Thus, prior to analyzing an empirical dataset, users should read the original paper that describes the principles and methodology behind PHRAPL:
 
-```
-Jackson, ND, AE Morales, BC Carstens, and BC O'Meara. 2017. PHRAPL: Phylogeographic Inference Using Approximate Likelihoods. Systematic Biology 66(6):1045-1053.
-```
+- Jackson N, Morales AE, Carstens BC, O'Meara BC (2017) [PHRAPL: Phylogeographic Inference using Approximate likelihoods](https://academic.oup.com/sysbio/article/66/6/1045/2999288). Systematic Biology. 66:1045-1053.
+
+### System requirements
 
 This tutorial assumes you are working in a Mac/Linux environment. We have yet to properly test the method using a PC, although we suspect a few (surmountable) issues will arise when the sufficiently adventurous try this out. For more detailed information about any of the tasks discussed below, take a look at the help files within PHRAPL (for a list of these, type `library(help=phrapl)` once the package is installed).
 
 
 
-## I. Installing PHRAPL
+## Installing **<font color='#006579'>PHRAPL</font>**
 
-PHRAPL can currently be found on Github (`https://github.com/bomeara/phrapl`), although you don't actually need to navigate Github to install the program. You can simply install PHRAPL in R using the R package `devtools`. To do this, first install `devtools` from CRAN by typing  
+`PHRAPL` can currently be found on Github (`https://github.com/bomeara/phrapl`), although you don't actually need to navigate Github to install the program. You can simply install PHRAPL in R using the R package `devtools`. To do this, first install `devtools` from CRAN by typing  
 
 <font size="4" face="courier" color="FA1704">*****************************************************************</font>
+
 ```
   install.packages("devtools")
 ```
@@ -46,11 +49,13 @@ Then load the `devtools` library (i.e., `library(devtools)`) and type
 ```
 <font size="4" face="courier" color="FA1704">*****************************************************************</font>
 
-which grabs PHRAPL from Github and installs it. 
+which grabs `PHRAPL` from Github and installs it. 
 
 *****
 
-Note that most of PHRAPL is written in R. However, the part of the code that matches observed trees to trees expected under a given model is currently written in Perl in order to speed up the method. If you are running PHRAPL on a Mac or Linux machine, Perl has most likely already been installed (to make sure, within R, you can type `system("perl -v")`, which will give you the version installed, if it exists). If Perl is not installed on your machine, you can download it from the Perl website (`http://www.perl.org/get.html`).
+### Install requirements
+
+Note that most of `PHRAPL` is written in R. However, the part of the code that matches observed trees to trees expected under a given model is currently written in Perl in order to speed up the method. If you are running `PHRAPL` on a Mac or Linux machine, Perl has most likely already been installed (to make sure, within R, you can type `system("perl -v")`, which will give you the version installed, if it exists). If Perl is not installed on your machine, you can download it from the Perl website (`http://www.perl.org/get.html`).
 
 One final note. It has come to our attention that one of the R packages that PHRAPL imports, `diagram`, includes an error in it's DESCRPTION file such that `devtools` can't install it. Thus, if you are thrown an error upon trying to install PHRAPL using `devtools` (something along the lines of `Invalid comparison operator in dependency: >=`, try installing `diagram` first without `devtools`, by typing `install.packages("diagram")`. Then, try installing PHRAPL again using the `devtools` command.
 
@@ -58,12 +63,16 @@ Also, for Mac users, if you experience issues with `rgl` properly installing, an
 
 *****
 
+## **<font color='#006579'>PHRAPL</font>** help
+
 Now PHRAPL is ready to run. Type `library(help=phrapl)` to get a list of functions with documentation. To open a help file for a particular function, type `?function_name`.
 
+***
 
-## II. Importing your dataset into R
 
-Three R objects must be initially specified to run a PHRAPL analysis:
+## Importing your dataset into R
+
+Three R objects must be initially specified to run a `PHRAPL` analysis:
 
 1. A set of trees in newick format
 2. A table that assigns tips of the trees to populations or species
@@ -71,25 +80,20 @@ Three R objects must be initially specified to run a PHRAPL analysis:
 
 ### *1. Importing trees*
 
-If you are beginning with sequence data, note that PHRAPL includes a function for inferring gene trees from sequence data by calling up RAxML (type `?RunRaxml` for more information on using this function). If your sequence data is in nexus format, there is also a function for converting your data to phylip format, which is the required format for running RAxML (type `?RunSeqConverter`). This function calls up a Perl script written by Olaf R.P. Bininda-Emonds.
+If you are beginning with sequence data, note that `PHRAPL` includes a function for inferring gene trees from sequence data by calling up RAxML (type `?RunRaxml` for more information on using this function). If your sequence data is in nexus format, there is also a function for converting your data to phylip format, which is the required format for running RAxML (type `?RunSeqConverter`). This function calls up a Perl script written by Olaf R.P. Bininda-Emonds. For the purposes of this tutorial, we will assume that you already have a set of trees in newick format sitting in a text file called "trees.tre". 
 
-For the purposes of this tutorial, I will assume that you already have a set of trees in newick format sitting in a text file called "trees.tre". To bring these trees into R, first load the `ape` library:  
+`PHRAPL` includes a toy dataset that we will use during this tutorial. This dataset consists of 10 trees, each with 61 tips: 20 tips from each of three populations ("A", "B", and "C"), plus one outgroup individual. To bring this dataset into R, first load the `ape` library:  
 
 <font size="4" face="courier" color="FA1704">*****************************************************************</font>
 ```
   library(ape)
 ```
 <font size="4" face="courier" color="FA1704">*****************************************************************</font>
-  
+
 Then read the trees into R and create a multiPhylo tree object called `trees`:  
 
-```
-  trees<-read.tree("trees.tre")
-```
-  
-PHRAPL comes packaged with a toy dataset that we will use during this tutorial. This dataset consists of 10 trees, each with 61 tips: 20 tips from each of three populations ("A", "B", and "C"), plus one outgroup individual. To bring this dataset into R, type  
-
 <font size="4" face="courier" color="FA1704">*****************************************************************</font>
+
 ```
   trees<-read.tree(paste(path.package("phrapl"),"/extdata/trees.tre",sep=""))
 ```
@@ -103,38 +107,38 @@ Note that multiPhylo objects behave as R lists. Thus to access the first tree wi
 
 To plot this tree, type  
 
-```
+```R
   plot.phylo(trees[[1]])
 ```
 
 ### *2. Importing an assignment table*
 
-PHRAPL assumes that the assignment of tips to populations or species is known. Thus these assignments must be specified upfront in the form of a table. This population assignment table must consist of two columns: the first column lists the individuals in the dataset, whose names must match those at the tips of the trees. Note that not all the individuals listed in the table must exist on every tree (i.e., missing data/unique tip names for each tree are fine). The second column should provide the population or species name to which each individual is assigned (e.g., "A", "B", "C"). If there is an outgroup taxon, it MUST be listed as the last population in the table and the first letter in the population name should also come last alphanumerically (e.g., `"Z.outgroup"`). Also note that PHRAPL assigns population indexes (i.e., 1, 2, 3, etc.) to taxa/populations alphanumerically, such that population 1 corresponds to the population name in your assignment table that comes first in the alphabet, and so forth. This is important to remember when interpreting parameter nomenclature in the output.A header row of some sort must also be included.
+`PHRAPL` assumes that the assignment of tips to populations or species is known. Thus these assignments must be specified upfront in the form of a table. 
 
-You can of course create this table directly in R as a data.frame. If you've created the assignment table as a tab-delimited text file (e.g., "cladeAssignments.txt"), you can import it into R as a data.frame by typing  
+This population assignment table must consist of two columns: the first column lists the individuals in the dataset, whose names must match those at the tips of the trees. Note that not all the individuals listed in the table must exist on every tree (i.e., missing data/unique tip names for each tree are fine). The second column should provide the population or species name to which each individual is assigned (e.g., "A", "B", "C"). If there is an outgroup taxon, it MUST be listed as the last population in the table and the first letter in the population name should also come last alphanumerically (e.g., `"Z.outgroup"`). Also note that PHRAPL assigns population indexes (i.e., 1, 2, 3, etc.) to taxa/populations alphanumerically, such that population 1 corresponds to the population name in your assignment table that comes first in the alphabet, and so forth. This is important to remember when interpreting parameter nomenclature in the output.A header row of some sort must also be included.
 
-```
-  assignFile<-read.table("cladeAssignments.txt",header=TRUE,stringsAsFactors=FALSE)
-```
+You can of course create this table directly in R as a data.frame. If you've created the assignment table as a tab-delimited text file (e.g., "cladeAssignments.txt"), you can import it into R as a data.frame by using the function `read.table`. Do not forget to set `header=TRUE`and `stringsAsFactors=FALSE`.
 
 To import an assignment table for our toy dataset, type  
 
 <font size="4" face="courier" color="FA1704">*****************************************************************</font>
-```
+```R
   assignFile<-read.table(paste(path.package("phrapl"),"/extdata/cladeAssignments.txt",sep=""),
-     header=TRUE,stringsAsFactors=FALSE) 
+     header=TRUE,stringsAsFactors=FALSE)
+assignFile
 ```
 <font size="4" face="courier" color="FA1704">*****************************************************************</font>
 
 ### *3. Specifying the number of tips to subsample (popAssignments)*
 
-Rather than fitting datasets to models using all the tree tips simultaneously, PHRAPL uses iterative subsamples of tips, allowing for the method to work in a manageable tree space. Thus, the number of tips to subsample per population must be specified by the user.
+Rather than fitting datasets to models using all the tree tips simultaneously, `PHRAPL` uses iterative subsamples of tips, allowing for the method to work in a manageable tree space. Thus, the number of tips to subsample per population must be specified by the user.
 
 A `popVector` is a vector, whose length is equal to the number of populations in the dataset and whose values are equal to the number of subsampled tips. So, for example, if you are subsampling 3 tips from a dataset that contains 3 populations, then `popVector = c(3,3,3)`. If subsampling 4 tips from 2 populations, `popVector = c(4,4)`. 
 
-Because PHRAPL possesses the ability to analyze a dataset under a series of different subsampling regimes, `popAssignments`, which is simply a list of `popVectors`, is the object that users actually specify (although `popAssignments` will typically be a list of one `popVector`). So, if the desired `popVector = c(3,3,3)`, then `popAssignments` should be defined by typing  
+Because `PHRAPL` possesses the ability to analyze a dataset under a series of different subsampling regimes, `popAssignments`, which is simply a list of `popVectors`, is the object that users actually specify (although `popAssignments` will typically be a list of one `popVector`). So, if the desired `popVector = c(3,3,3)`, then `popAssignments` should be defined by typing  
 
 <font size="4" face="courier" color="FA1704">*****************************************************************</font>
+
 ```
   popAssignments<-list(c(3,3,3))
 ```
@@ -142,11 +146,11 @@ Because PHRAPL possesses the ability to analyze a dataset under a series of diff
 
 which is the value we will use for our toy dataset.    
 
-We recommend generally subsampling 3 or 4 tips per population. However, subsampling 2 tips may be necessary with more than 5 populations while subsampling 5 tips may work fine with 3 or fewer populations. As a rule of thumb, we recommend subsampling in a way that keeps the sum of `popAssignments` at 16 or less. With greater than 16 tips, the number of possible trees becomes so large that PHRAPL has a difficult time simulating enough trees under a given model to find any matches to the empirical trees, rendering log-likelihood (lnL) estimation challenging. 
+We recommend generally subsampling 3 or 4 tips per population. However, subsampling 2 tips may be necessary with more than 5 populations while subsampling 5 tips may work fine with 3 or fewer populations. As a rule of thumb, we recommend subsampling in a way that keeps the sum of `popAssignments` at 16 or less. With greater than 16 tips, the number of possible trees becomes so large that `PHRAPL` has a difficult time simulating enough trees under a given model to find any matches to the empirical trees, rendering log-likelihood (lnL) estimation challenging. 
 
 
 
-## III. Subsampling trees
+## Subsampling trees
 
 As discussed above, approximate likelihood calculation as currently implemented in PHRAPL requires that trees not be too large (~16 tips or fewer) such that there exists a measurable chance of observing the empirical tree within a distribution of simulated trees. Since most phylogeographic datasets are considerably larger than this, replicate subsamples of trees must typically be analyzed. Trees are subsampled (randomly, with replacement) using the function `PrepSubsampling`, which requires the following arguments:
 
@@ -191,7 +195,7 @@ Finally, keep in mind that PHRAPL requires that trees be rooted, but not that th
 *****
 
 
-## IV. Calculating degeneracy weights for subsampled trees
+## Calculating degeneracy weights for subsampled trees
 
 As a way of reducing the tree space that PHRAPL faces when calculating the probability of a gene topology, all tip labels *within* populations are essentially ignored when assessing matches between simulated and observed trees. If the only differences between two trees consist of intra-population discrepancies, then these trees are considered to be "matches". To adjust lnLs in a way that accounts for this degeneracy of intra-population tip labels, topological weights are calculated based on the proportion of times that the intra-population permuting of labels across a tree results in the same topology. These weights can be calculated during the PHRAPL search analysis - to do this, when running `GridSearch` (described below), set `subsampleWeights.df = NULL` and `doWeights = TRUE`. However, when there are more than a few tips in the subsampled trees, this can be time consuming, and thus it is helpful to calculate these upfront. To get these weights beforehand, you can use the function `GetPermutationWeightsAcrossSubsamples`, which takes as input `popAssignments` and the set of subsampled trees. For our toy dataset, type  
 
@@ -206,7 +210,7 @@ As with `PrepSubsampling`, this function produces a list of weights tables with 
 
 
 
-## V. Generating models
+## Generating models
 
 The last thing we need prior to analyzing the dataset is a set of models to test. This set of models can be constructed "one at a time", if you have specific *a priori* histories to compare, or a set of "all possible models" can be generated automatically given a specified list of criteria. Or of course you can combine these approaches. This section first describes the structure of models in PHRAPL and then outlines how to go about generating a model set using these two approaches.
 
@@ -340,7 +344,7 @@ model for which you have some *a priori* reason to consider alone, or to add to 
 ```
   collapseList = list(c(1,1,0),c(2,NA,2))  
 ```
-    
+
 means that there are two coalescence events: in the first event, populations 1 and 2 
 coalesce while population 3 does not; in the second event, ancestral population 
 1-2 coalesces with population 3. 
@@ -350,7 +354,7 @@ coalesce while population 3 does not; in the second event, ancestral population
 ```
   n0multiplierList = list(c(1,1,1),c(1,NA,1))  
 ```
-    
+
 If you would like to model one growth rate for tip populations and another growth rate for ancestral populations, this would be given as  
 
 ```
@@ -468,7 +472,7 @@ To run a grid search on our toy dataset, let's just analyze the first three mode
 1. Parameter grids (with AICs) for each model (itself a list)
 2. A results table that gives AICs, lnLs, *K*s (`params.K`), parameters (`params.vector`), and parameter estimates for each model
 Grid points with an `AIC = NA` signal parameter combinations that did not yield enough matches between observed and expected trees to calculate a lnL. Parameter estimates equal to `NA` occur when those parameters are not included in the model. Parameter estimates are obtained by model averaging across the grid. Parameters for *t*, *n*, *g*, and *M* are given for each time slice in the model, starting at the tips and moving toward the root (`t1` = coalescence time at time 1, `m2` = ancestral migration rates at time 2, etc.). For *t*, the coalescing populations follow the underscore and are separated by a period (e.g., `t2_1-2.3` gives the coalescence time for ancestral populations 1-2 and 3 at time 2); for *m*, migrants move from the population before the period to the population after the period (e.g., `m1_2.1` gives the rate of migration at the tips, from population 2 into population 1). 
-    
+  
 
 
 ## VII. Saving, compiling, summarizing, and visualizing results
@@ -509,7 +513,7 @@ Upon inspecting the results, you may feel inclined to create a 3-D image of the 
 ```
   PlotModel(migrationIndividual=migrationArray[[1]],taxonNames=c("A","B","C"))  
 ```
-    
+
 A statuette of this model can then be printed using 14 carat gold, which could be useful as a project souvenir/retirement nest egg, e.g.:  
 
 ```
