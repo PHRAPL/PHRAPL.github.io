@@ -3,7 +3,7 @@ layout: default
 title: Home
 nav_order: 1
 description: "Introduction"
-has_children: true
+has_children: false
 has_toc: false
 permalink: /
 ---
