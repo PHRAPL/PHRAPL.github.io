@@ -31,7 +31,7 @@ Watch [these YouTube videos](https://www.youtube.com/watch?v=UC4Mj1K6c0k) to lea
 ### CODE
 `PHRAPL` is written in `R`, but it uses `perl` and `ms` to perform simulations. The pre-CRAN (code under development) can be found in [github.](https://github.com/bomeara/phrapl)
 
-
+---
 ### CITATION
 - Jackson N, Morales AE, Carstens BC, O'Meara BC (2017) [PHRAPL: Phylogeographic Inference using Approximate likelihoods](https://academic.oup.com/sysbio/article/66/6/1045/2999288). Systematic Biology. 66:1045-1053.
 
@@ -41,11 +41,11 @@ Watch [these YouTube videos](https://www.youtube.com/watch?v=UC4Mj1K6c0k) to lea
 - Morales AE, Jackson N, Dewey T, O’Meara BC, Carstens BC (2017) [Speciation with gene flow in North American Myotis bats](https://academic.oup.com/sysbio/article/66/3/440/2682289). Systematic Biology. 66:440-452.
 - Carstens BC, Morales AE, Jackson N, O’Meara BC (2017) [Objective choice of Phylogeographic Models](https://www.sciencedirect.com/science/article/pii/S1055790317303160?via%3Dihub). Molecular Phylogenetics and Evolution. 116:136-140.
 
-
+---
 ### DO YOU HAVE A QUESTION ABOUT **<font color='#006579'>PHRAPL</font>** OR WANT TO REPORT A BUG?
 Post questions and comments in the [phrapl-users](https://groups.google.com/forum/#!forum/phrapl-users) google group.
 
-
+---
 ### FUNDING
 The National Science Foundation funded this research (DEB 1257784/DEB 1257669). 
 The Ohio Supercomputer Center allocated resources to support part of this study (PAS1184).
