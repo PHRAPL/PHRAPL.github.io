@@ -8,13 +8,11 @@ nav_order: 1
 # Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**
 {: .no_toc }
 
-### Goal
-{: .no_toc }
-The purpose of this vignette is to provide a brief tutorial for using this method. It will walk you through the necessary steps required for installing the package, preparing a dataset and model set using R, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a PHRAPL analysis, which could get a bit confusing for someone using the program for the first time. For this reason, **we have highlighted with <font color="FA1704">red asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset.** 
+The purpose of this tutorial is to provide a brief introduction for using `PHRAPL`. It will walk you through the necessary steps required for installing the package, preparing a dataset and model set using R, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a `PHRAPL` analysis, which could get a bit confusing for someone using the program for the first time. For this reason, **we have highlighted with <font color="FA1704">red asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset.** 
 
 ### This tutorial assumes you have read the **<font color='#006579'>PHRAPL</font>** paper
 {: .no_toc }
-This tutorial will assume that the reader already has a basic understanding of how PHRAPL works and the problems it is meant to address. The focus here will rather be on the practical issues surrounding the analysis of a dataset. Thus, prior to analyzing an empirical dataset, users should read the original paper that describes the principles and methodology behind PHRAPL:
+This tutorial will assume that the reader already has a basic understanding of how `PHRAPL` works and the problems it is meant to address. The focus here will rather be on the practical issues surrounding the analysis of a dataset. Thus, prior to analyzing an empirical dataset, users should read the original paper that describes the principles and methodology behind PHRAPL:
 
 - Jackson N, Morales AE, Carstens BC, O'Meara BC (2017) [PHRAPL: Phylogeographic Inference using Approximate likelihoods](https://academic.oup.com/sysbio/article/66/6/1045/2999288). Systematic Biology. 66:1045-1053.
 
