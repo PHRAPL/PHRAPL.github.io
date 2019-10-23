@@ -8,9 +8,9 @@ nav_order: 1
 # Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**
 {: .no_toc }
 
-The purpose of this tutorial is to provide a brief introduction for using `PHRAPL`. It will walk you through the necessary steps required for installing the package, preparing a dataset and model set using R, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a `PHRAPL` analysis, which could get a bit confusing for someone using the program for the first time. For this reason, **we have highlighted with <font color="FA1704">red asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset.** 
+The purpose of this tutorial is to provide a brief introduction for using `PHRAPL`. It will walk you through the necessary steps required for installing the package, preparing a dataset and model set using R, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a `PHRAPL` analysis, which could get a bit confusing for someone using the program for the first time. For this reason, **we have highlighted with <font color="#ff7700">red asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset.** 
 
-### <font color='#ff7700'>This tutorial assumes you have read the **<font color='#006579'>PHRAPL</font>** paper.</font>
+### **<font color='#ff7700'>This tutorial assumes you have read the <font color='#006579'>PHRAPL</font> paper.</font>**
 {: .no_toc }
 This tutorial will assume that the reader already has a basic understanding of how `PHRAPL` works and the problems it is meant to address. The focus here will rather be on the practical issues surrounding the analysis of a dataset. Thus, prior to analyzing an empirical dataset, users should read the original paper that describes the principles and methodology behind PHRAPL:
 
@@ -41,20 +41,20 @@ Also, for Mac users, if you experience issues with `rgl` properly installing, an
 ### Install Github version
 `PHRAPL` can currently be found on Github (`https://github.com/bomeara/phrapl`), although you don't actually need to navigate Github to install the program. You can simply install PHRAPL in R using the R package `devtools`. To do this, first install `devtools` from CRAN by typing  
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 ```
   install.packages("devtools")
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
     
 Then load the `devtools` library (i.e., `library(devtools)`) and type    
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 ```
   devtools::install_github("bomeara/phrapl")
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 which grabs `PHRAPL` from Github and installs it. 
 
@@ -81,20 +81,20 @@ If you are beginning with sequence data, note that `PHRAPL` includes a function 
 
 `PHRAPL` includes a toy dataset that we will use during this tutorial. This dataset consists of 10 trees, each with 61 tips: 20 tips from each of three populations ("A", "B", and "C"), plus one outgroup individual. To bring this dataset into R, first load the `ape` library:  
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 ```
   library(ape)
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 Then read the trees into R and create a multiPhylo tree object called `trees`:  
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 ```
   trees<-read.tree(paste(path.package("phrapl"),"/extdata/trees.tre",sep=""))
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 Note that multiPhylo objects behave as R lists. Thus to access the first tree within the object, type  
 
@@ -118,13 +118,13 @@ You can of course create this table directly in R as a data.frame. If you've cre
 
 To import an assignment table for our toy dataset, type  
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 ```R
   assignFile<-read.table(paste(path.package("phrapl"),"/extdata/cladeAssignments.txt",sep=""),
      header=TRUE,stringsAsFactors=FALSE)
 assignFile
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 ### *3. Specifying the number of tips to subsample (popAssignments)*
 
@@ -134,12 +134,12 @@ A `popVector` is a vector, whose length is equal to the number of populations in
 
 Because `PHRAPL` possesses the ability to analyze a dataset under a series of different subsampling regimes, `popAssignments`, which is simply a list of `popVectors`, is the object that users actually specify (although `popAssignments` will typically be a list of one `popVector`). So, if the desired `popVector = c(3,3,3)`, then `popAssignments` should be defined by typing  
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 ```
   popAssignments<-list(c(3,3,3))
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 which is the value we will use for our toy dataset.    
 
@@ -160,7 +160,7 @@ As discussed above, approximate likelihood calculation as currently implemented 
 
 To subsample our toy dataset using 10 replicates and 3 tips per population, do the following:  
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 ```
   assignmentsGlobal<-assignFile  
   observedTrees<-trees  
@@ -173,7 +173,7 @@ To subsample our toy dataset using 10 replicates and 3 tips per population, do t
       popAssignments=popAssignments,subsamplesPerGene=subsamplesPerGene,outgroup=outgroup,
       outgroupPrune=outgroupPrune)
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 *****
 Note that this function produces a list of subsampled tree sets to match the format of `popAssignments` (i.e., one set per `popVector`). Thus, if you have a single `popVector`, the `PrepSubsampling` function will output a list with a single set of trees. This set of subsampled trees first contains all the subsample iterations for the first locus, then all the iterations for the second locus, and so forth. Thus, for example, for our `observedTrees` we just generated, we can access the first subsample iteration of the second locus by typing `observedTrees[[1]][[11]]`.
@@ -196,12 +196,12 @@ Finally, keep in mind that PHRAPL requires that trees be rooted, but not that th
 
 As a way of reducing the tree space that PHRAPL faces when calculating the probability of a gene topology, all tip labels *within* populations are essentially ignored when assessing matches between simulated and observed trees. If the only differences between two trees consist of intra-population discrepancies, then these trees are considered to be "matches". To adjust lnLs in a way that accounts for this degeneracy of intra-population tip labels, topological weights are calculated based on the proportion of times that the intra-population permuting of labels across a tree results in the same topology. These weights can be calculated during the PHRAPL search analysis - to do this, when running `GridSearch` (described below), set `subsampleWeights.df = NULL` and `doWeights = TRUE`. However, when there are more than a few tips in the subsampled trees, this can be time consuming, and thus it is helpful to calculate these upfront. To get these weights beforehand, you can use the function `GetPermutationWeightsAcrossSubsamples`, which takes as input `popAssignments` and the set of subsampled trees. For our toy dataset, type  
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 ```
   subsampleWeights.df<-GetPermutationWeightsAcrossSubsamples(popAssignments=popAssignments,
       observedTrees=observedTrees)
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 	
 As with `PrepSubsampling`, this function produces a list of weights tables with the same length as `popAssignments`. Within a weights table, each weight corresponds to a subsampled tree.
 
@@ -282,7 +282,7 @@ For example, a list of models for 3 populations with
 
 can be generated for use with our toy dataset as follows:
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 ```
   popVector<-popAssignments[[1]]  
   maxK<-3  
@@ -295,7 +295,7 @@ can be generated for use with our toy dataset as follows:
       maxMigrationK=maxMigrationK,maxN0K=maxN0K,maxGrowthK=maxGrowthK,
       forceTree=forceTree,forceSymmetricalMigration=forceSymmetricalMigration)
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 This yields a `migrationArray` containing 48 models. If desired, one can also
 specify a particular set of fixed parameter indices (using the `collapseList`, `n0multiplierList`,
@@ -454,7 +454,7 @@ If the dataset being analyzed contains loci that differ in their prevalence in a
 
 To run a grid search on our toy dataset, let's just analyze the first three models using `nTrees = 1000` (so it runs quickly):  
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 ```
   modelRange<-1:3  
   nTrees<-1000  
@@ -462,7 +462,7 @@ To run a grid search on our toy dataset, let's just analyze the first three mode
       observedTrees=observedTrees,subsampleWeights.df=subsampleWeights.df,  
       subsamplesPerGene=subsamplesPerGene,nTrees=nTrees) 
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 `GridSearch` outputs a list containing 
 
@@ -476,32 +476,32 @@ Grid points with an `AIC = NA` signal parameter combinations that did not yield 
 
 The `ConcatenateResults` function can compile results from across separate runs into a single table. If you are analyzing models in separate runs, you will want to save `GridSearch` results in a file to access later, e.g.:  
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 ```
   save(list="result",file="phraplOutput_models1-3.rda")  
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
     
 IMPORTANT NOTE: The results saved from a GridSearch should literally be named "result", for that is the object name that the next function discussed (ConcatenateResults) looks for when summarizing GridSearch results from across different runs.
 
 When concatenating results, you can either specify the names of the files containing the results to be concatenated (by giving a vector of names to the argument `rdaFiles`) or the directory in which these files are stored (using `rdaFilesPath`). So, for our toy dataset, type  
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 ```
   totalResults<-ConcatenateResults(rdaFiles="phraplOutput_models1-3.rda",  
       migrationArray=migrationArray)  
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 This table can be outputted to a file by specifying an output filename using the `outFile` argument.
 
 You can calculate model averaged parameter values across all models using the `modelAverages` function, e.g.:  
 
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 ```
   modelAverages<-CalculateModelAverages(totalResults)  
 ```
-<font size="4" face="courier" color="FA1704">*****************************************************************</font>
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 The default is to model average parameters across all models (assuming that the parameter = 0 when it is not specified in a model). Alternatively, one can model average across only those models in which a given parameter is explicitly incorporated by setting `averageAcrossAllModels = FALSE`.
 
