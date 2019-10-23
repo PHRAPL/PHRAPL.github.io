@@ -8,30 +8,40 @@ nav_order: 1
 # Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**
 {: .no_toc }
 
+### Goal
+{: .no_toc }
+The purpose of this vignette is to provide a brief tutorial for using this method. It will walk you through the necessary steps required for installing the package, preparing a dataset and model set using R, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a PHRAPL analysis, which could get a bit confusing for someone using the program for the first time. For this reason, **we have highlighted with <font color="FA1704">red asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset.** 
+
+### This tutorial assumes you have read the **<font color='#006579'>PHRAPL</font>** paper
+{: .no_toc }
+{: .no_toc }
+This tutorial will assume that the reader already has a basic understanding of how PHRAPL works and the problems it is meant to address. The focus here will rather be on the practical issues surrounding the analysis of a dataset. Thus, prior to analyzing an empirical dataset, users should read the original paper that describes the principles and methodology behind PHRAPL:
+
+- Jackson N, Morales AE, Carstens BC, O'Meara BC (2017) [PHRAPL: Phylogeographic Inference using Approximate likelihoods](https://academic.oup.com/sysbio/article/66/6/1045/2999288). Systematic Biology. 66:1045-1053.
+
+---
 1. TOC
 {:toc}
 _modified from [vignette](https://github.com/bomeara/phrapl/blob/master/doc/phrapl_vignette.pdf) designed by Nathan Jackson and included in the compiled version of `PHRAPL`_
 
 ---
-
-### Goal
-
-The purpose of this vignette is to provide a brief tutorial for using this method. It will walk you through the necessary steps required for installing the package, preparing a dataset and model set using R, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a PHRAPL analysis, which could get a bit confusing for someone using the program for the first time. For this reason, **we have highlighted with <font color="FA1704">red asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset.** 
-
-### This tutorial assumes you have read the **<font color='#006579'>PHRAPL</font>** paper
-
-This tutorial will assume that the reader already has a basic understanding of how PHRAPL works and the problems it is meant to address. The focus here will rather be on the practical issues surrounding the analysis of a dataset. Thus, prior to analyzing an empirical dataset, users should read the original paper that describes the principles and methodology behind PHRAPL:
-
-- Jackson N, Morales AE, Carstens BC, O'Meara BC (2017) [PHRAPL: Phylogeographic Inference using Approximate likelihoods](https://academic.oup.com/sysbio/article/66/6/1045/2999288). Systematic Biology. 66:1045-1053.
-
-### System requirements
-
-This tutorial assumes you are working in a Mac/Linux environment. We have yet to properly test the method using a PC, although we suspect a few (surmountable) issues will arise when the sufficiently adventurous try this out. For more detailed information about any of the tasks discussed below, take a look at the help files within PHRAPL (for a list of these, type `library(help=phrapl)` once the package is installed).
-
-
-
 ## Installing **<font color='#006579'>PHRAPL</font>**
 
+### System requirements
+This tutorial assumes you are working in a Mac/Linux environment. We have yet to properly test the method using a PC, although we suspect a few (surmountable) issues will arise when the sufficiently adventurous try this out. For more detailed information about any of the tasks discussed below, take a look at the help files within PHRAPL (for a list of these, type `library(help=phrapl)` once the package is installed).
+
+*****
+
+### Install requirements
+Note that most of `PHRAPL` is written in R. However, the part of the code that matches observed trees to trees expected under a given model is currently written in Perl in order to speed up the method. If you are running `PHRAPL` on a Mac or Linux machine, Perl has most likely already been installed (to make sure, within R, you can type `system("perl -v")`, which will give you the version installed, if it exists). If Perl is not installed on your machine, you can download it from the Perl website (`http://www.perl.org/get.html`).
+
+One final note. It has come to our attention that one of the R packages that PHRAPL imports, `diagram`, includes an error in it's DESCRPTION file such that `devtools` can't install it. Thus, if you are thrown an error upon trying to install PHRAPL using `devtools` (something along the lines of `Invalid comparison operator in dependency: >=`, try installing `diagram` first without `devtools`, by typing `install.packages("diagram")`. Then, try installing PHRAPL again using the `devtools` command.
+
+Also, for Mac users, if you experience issues with `rgl` properly installing, another PHRAPL dependency, you should try updating your version of XQuartz (`https://www.xquartz.org/`), then reinstalling `rgl` separately in R (`install.packages("rgl")`). Then install PHRAPL.
+
+*****
+
+### Install Github version
 `PHRAPL` can currently be found on Github (`https://github.com/bomeara/phrapl`), although you don't actually need to navigate Github to install the program. You can simply install PHRAPL in R using the R package `devtools`. To do this, first install `devtools` from CRAN by typing  
 
 <font size="4" face="courier" color="FA1704">*****************************************************************</font>
@@ -50,16 +60,6 @@ Then load the `devtools` library (i.e., `library(devtools)`) and type
 <font size="4" face="courier" color="FA1704">*****************************************************************</font>
 
 which grabs `PHRAPL` from Github and installs it. 
-
-*****
-
-### Install requirements
-
-Note that most of `PHRAPL` is written in R. However, the part of the code that matches observed trees to trees expected under a given model is currently written in Perl in order to speed up the method. If you are running `PHRAPL` on a Mac or Linux machine, Perl has most likely already been installed (to make sure, within R, you can type `system("perl -v")`, which will give you the version installed, if it exists). If Perl is not installed on your machine, you can download it from the Perl website (`http://www.perl.org/get.html`).
-
-One final note. It has come to our attention that one of the R packages that PHRAPL imports, `diagram`, includes an error in it's DESCRPTION file such that `devtools` can't install it. Thus, if you are thrown an error upon trying to install PHRAPL using `devtools` (something along the lines of `Invalid comparison operator in dependency: >=`, try installing `diagram` first without `devtools`, by typing `install.packages("diagram")`. Then, try installing PHRAPL again using the `devtools` command.
-
-Also, for Mac users, if you experience issues with `rgl` properly installing, another PHRAPL dependency, you should try updating your version of XQuartz (`https://www.xquartz.org/`), then reinstalling `rgl` separately in R (`install.packages("rgl")`). Then install PHRAPL.
 
 *****
 
