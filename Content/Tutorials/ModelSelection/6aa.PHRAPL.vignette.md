@@ -10,7 +10,7 @@ nav_order: 1
 
 The purpose of this tutorial is to provide a brief introduction for using `PHRAPL`. It will walk you through the necessary steps required for installing the package, preparing a dataset and model set using R, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a `PHRAPL` analysis, which could get a bit confusing for someone using the program for the first time. For this reason, **we have highlighted with <font color="FA1704">red asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset.** 
 
-### This tutorial assumes you have read the **<font color='#006579'>PHRAPL</font>** paper
+### <font color='#ff7700'>This tutorial assumes you have read the **<font color='#006579'>PHRAPL</font>** paper.</font>
 {: .no_toc }
 This tutorial will assume that the reader already has a basic understanding of how `PHRAPL` works and the problems it is meant to address. The focus here will rather be on the practical issues surrounding the analysis of a dataset. Thus, prior to analyzing an empirical dataset, users should read the original paper that describes the principles and methodology behind PHRAPL:
 
