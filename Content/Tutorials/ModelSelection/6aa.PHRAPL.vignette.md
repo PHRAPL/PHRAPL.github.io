@@ -7,7 +7,7 @@ nav_order: 1
 
 # Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**
 {: .no_toc }
-_modified from vignette designed by Nathan Jackson and included in `PHRAPL` repo_
+_modified from [vignette](https://github.com/bomeara/phrapl/blob/master/doc/phrapl_vignette.pdf) designed by Nathan Jackson and included in the compiled version of `PHRAPL`_
 
 1. TOC
 {:toc}
@@ -107,7 +107,7 @@ To plot this tree, type
   plot.phylo(trees[[1]])
 ```
 
-###*2. Importing an assignment table*
+### *2. Importing an assignment table*
 
 PHRAPL assumes that the assignment of tips to populations or species is known. Thus these assignments must be specified upfront in the form of a table. This population assignment table must consist of two columns: the first column lists the individuals in the dataset, whose names must match those at the tips of the trees. Note that not all the individuals listed in the table must exist on every tree (i.e., missing data/unique tip names for each tree are fine). The second column should provide the population or species name to which each individual is assigned (e.g., "A", "B", "C"). If there is an outgroup taxon, it MUST be listed as the last population in the table and the first letter in the population name should also come last alphanumerically (e.g., `"Z.outgroup"`). Also note that PHRAPL assigns population indexes (i.e., 1, 2, 3, etc.) to taxa/populations alphanumerically, such that population 1 corresponds to the population name in your assignment table that comes first in the alphabet, and so forth. This is important to remember when interpreting parameter nomenclature in the output.A header row of some sort must also be included.
 
