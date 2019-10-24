@@ -6,11 +6,27 @@ nav_order: 2
 ---
 
 
+# Tutorial 2: Sensitivity and power analyses
+{: .no_toc }
 
 
+### **<font color='#ff7700'>Recommended read before starting this tutorial</font>**
+{: .no_toc }
+This tutorial will describe some of the `PHRAPL`analyses used in the papers listed below.
+- Morales AE, Jackson N, Dewey T, O’Meara BC, Carstens BC (2017) [Speciation with gene flow in North American Myotis bats](https://academic.oup.com/sysbio/article/66/3/440/2682289). Systematic Biology. 66:440-452.
+- Denton RD, Morales AE, Gibbs HL (2018) [Genome-specific histories of divergence and introgression between an allopolyploid unisexual salamander lineage and two ancestral sexual species](https://onlinelibrary.wiley.com/doi/full/10.1111/evo.13528). Evolution.  72:1689–1700.
 
+---
+1. TOC
+{:toc}
+---
+
+## Set up a **<font color='#006579'>PHRAPL</font>** analysis
+
+### Inout data and subsampling
+
+```r
 setwd("/working_path/sensitivityAnalyses")
-
 
 ########################
 ### 1. Subsampling  ####
@@ -55,8 +71,12 @@ load(paste(getwd(),"/input/MigrationArray_2pop_3K.rda",sep=""))
 migrationArrayMap<-GenerateMigrationArrayMap(migrationArray)
 
 save(list=c("observedTrees","subsampleWeights.df","migrationArrayMap"),file=paste(getwd(),"/input/phraplInput_Pleth.rda",sep=""))
+```
 
 
+### GridSearch
+
+```r
 ######################
 ### 2. GridSearch  ###
 ######################
@@ -136,8 +156,11 @@ save(list=ls(), file=paste(paste(getwd(),"/results/Pleth_",min(modelRange),"_",m
 system(paste("mkdir ", getwd(),  "/results/RoutFiles", sep=""))
 system(paste("mv ", getwd(), "/scripts/1.Subsampling_GridSearch_Post.Rout ", getwd(), "/results/RoutFiles/1.Subsampling_GridSearch_Post.Rout", sep=""))
 system(paste("rm ", getwd(), "/scripts/1.Subsampling_GridSearch_Post.R.out", sep=""))
+```
 
+### Post-process
 
+```r
 ########################
 ### 3. Post-process  ###
 ########################
@@ -153,8 +176,12 @@ write.table(totalData, file=paste(getwd(),"/results/totalData.txt",sep=""), sep=
 #PlotModel(migrationArray[[1]], taxonNames=c("S","N"))
 #PlotModel(migrationArray[[6]], taxonNames=c("S","N"))
 #PlotModel(migrationArray[[3]], taxonNames=c("S","N"))
+```
+
+## Sensitivity analyses
 
 
+```r 
 setwd("/working_path/sensitivityAnalyses")
 
 ################################
@@ -207,8 +234,12 @@ RoutFilename<-read.table(file=paste(getwd(),'/results/RoutFiles/matches_2.RunGri
 
 # Command line to run function GenerateSetLoci
 GenerateSetLoci(lociRange=lociRange,NintervalLoci=NintervalLoci,RoutFilename,rdaFilename,migrationArray=migrationArray,modelRange=modelRange,subsamplesPerGene=subsamplesPerGene,collapseStarts=collapseStarts,migrationStarts=migrationStarts,n0multiplierStarts=n0multiplierStarts,setCollapseZero=setCollapseZero,cumulative=TRUE,nTrees=nTrees,dAIC.cutoff=2,nEq=nEq, subsampleWeightsVec=subsampleWeightsVec)
+```
 
 
+### Postprocess RDA files per subset
+
+```r
 #########################################
 ### Postprocess RDA files per subset  ###
 
@@ -224,7 +255,11 @@ for(i in 1:5){                    ## ------> Be careful to specify the total num
 	#modelAverages<-CalculateModelAverages(totalData,parmStartCol=9)
     write.table(totalData, file=paste(pathtotalData_subsets,"totalData_subset",i,".txt",sep=""), sep="\t", row.names=FALSE)
 }
+```
 
+### Plot subsets
+
+```r
 ########################
 ### 5. Plot subsets  ###
 ########################
@@ -298,4 +333,11 @@ dev.off()
 R CMD BATCH 1.Subsampling_GridSearch_Post.R > 1.Subsampling_GridSearch_Post.R.out
 R CMD BATCH 2.Subsets.R > 2.Subsets.out
 rm *.Rout
-rm *.out
+rm *.out 
+```
+
+## Fix migration time intervals
+
+
+
+
