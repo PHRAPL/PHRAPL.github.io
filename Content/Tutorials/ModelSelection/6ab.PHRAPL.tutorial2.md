@@ -1,8 +1,10 @@
 ---
 layout: default
-title: Empirical data - 2 populations
-parent: Demographic model selection
+title: Tutorial 2: Subsets and power analysis
+parent: Tutorials
 nav_order: 2
+has_children: false
+permalink: Content/Tutorials/ModelSelection
 ---
 
 
