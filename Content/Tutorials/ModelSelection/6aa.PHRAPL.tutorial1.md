@@ -494,6 +494,13 @@ When concatenating results, you can either specify the names of the files contai
 
 This table can be outputted to a file by specifying an output filename using the `outFile` argument.
 
+models | AIC | lnL | rank | dAIC | wAIC | params.K | params.vector | t1_1.2 | t2_1-2.3 | m1_1.2 | m1_1.3 | m1_2.1 | m1_3.1 |
+------|---|---|----|----|----|--------|-------|-----|-----|------|------|-----|----|
+1 | 104.681808558051 | -50.340904279025 | 1 | 0 | 0.747493733212393 | 2 | collapse_1 collapse_2 | 0.802010307787278 | 2.41206310088882 | NA | NA | NA | NA |
+2 | 107.427516309546 | -50.713758154773 | 2 | 2.746 | 0.189374383642894 | 3 | collapse_1 collapse_2 migration_1 | 1.10932831804684 | 2.89120505586268 | 0.12375682767371 | NA | 0.12375682767371 | NA |
+3 | 109.625209365656 | -51.812604682828 | 3 | 4.943 | 0.0631318831447129 | 3 | collapse_1 collapse_2 migration_1 | 0.776721051811846 | 7.39406167578743 | NA | 0.112313076507491 | NA | 0.112313076507491 |
+
+
 You can calculate model averaged parameter values across all models using the `modelAverages` function, e.g.:  
 
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
@@ -504,11 +511,19 @@ You can calculate model averaged parameter values across all models using the `m
 
 The default is to model average parameters across all models (assuming that the parameter = 0 when it is not specified in a model). Alternatively, one can model average across only those models in which a given parameter is explicitly incorporated by setting `averageAcrossAllModels = FALSE`.
 
+t1_1.2 | t2_1-2.3 | m1_1.2 | m1_1.3 | m1_2.1 | m1_3.1 |
+---|---|---|---|---|---|
+1 | 0.858611908209486 | 2.81732326514707 | 0.0234363729623087 | 0.00709053602169414 | 0.0234363729623087 | 0.00709053602169414 |
+
 Upon inspecting the results, you may feel inclined to create a 3-D image of the best model, e.g.:  
 
 ```
   PlotModel(migrationIndividual=migrationArray[[1]],taxonNames=c("A","B","C"))  
 ```
+
+![](https://github.com/ariadnamorales/phrapl-manual/blob/master/images/tutorial1.model1.pdf)
+
+
 
 A statuette of this model can then be printed using 14 carat gold, which could be useful as a project souvenir/retirement nest egg, e.g.:  
 
