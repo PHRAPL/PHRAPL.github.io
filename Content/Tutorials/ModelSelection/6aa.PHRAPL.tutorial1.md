@@ -521,7 +521,7 @@ Upon inspecting the results, you may feel inclined to create a 3-D image of the 
   PlotModel(migrationIndividual=migrationArray[[1]],taxonNames=c("A","B","C"))  
 ```
 
-<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/tutorial1.model1.pdf" width="400" height="400" />
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/tutorial1.model1.png?raw=TRUE" width="400" height="400" />
 
 
 A statuette of this model can then be printed using 14 carat gold, which could be useful as a project souvenir.  
