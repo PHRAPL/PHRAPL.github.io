@@ -429,11 +429,11 @@ One can add additional complexity to generated models using the function `AddEve
 
 ## VI. Running a PHRAPL grid search
 
-Once you have a model set in hand and the data have been subsampled and weights have been calculated, you are finally ready to calculate AIC values and parameter estimates for your dataset under the models using the `GridSearch` function. 
+### A brief summary of the GridSearch
 
-This function is called `GridSearch` because it analyzes each model across a grid of parameter values as a way to estimate those values that yield the best fit to the data. Numerical optimization searches are also available within PHRAPL (type `?GridSearch` for more on these), but we don't recommend using them due to their being more computationally onerous without imparting a compensatory improvement in performance. The parameter values contained in the grid can be specified by the user using the arguments `collapseStarts`, `n0Starts`, `growthStarts`, and `migrationStarts`, or default values can be used (to see these default values, type `?GridSearch`). When choosing grid values, keep in mind that the grid size, and thus number of simulations that PHRAPL must do, increases rapidly with each added parameter value, and thus there will be tradeoffs if you want to explore a large grid. Also, a model with many parameters will need to be analyzed using fewer specified values per parameter compared to a model with only one or two parameters in order to yield a parameter grid of the same size.
+Once you have a model set in hand and the data have been subsampled and weights have been calculated, you are finally ready to calculate AIC values and parameter estimates for your dataset under the models using the `GridSearch` function. **This function is called `GridSearch` because it analyzes each model across a grid of parameter values as a way to estimate those values that yield the best fit to the data.** Numerical optimization searches are also available within `PHRAPL` (type `?GridSearch` for more on these), but we don't recommend using them due to their being more computationally onerous without imparting a compensatory improvement in performance. The parameter values contained in the grid can be specified by the user using the arguments `collapseStarts`, `n0Starts`, `growthStarts`, and `migrationStarts`, or default values can be used (to see these default values, type `?GridSearch`). When choosing grid values, keep in mind that the grid size, and thus number of simulations that `PHRAPL` must do, increases rapidly with each added parameter value, and thus there will be tradeoffs if you want to explore a large grid. Also, a model with many parameters will need to be analyzed using fewer specified values per parameter compared to a model with only one or two parameters in order to yield a parameter grid of the same size.
 
-The main inputs for `GridSearch` are
+The main inputs for `GridSearch` are:
 
 1. `migrationArray` (the model set)
 2. `observedTrees` (the set of subsampled trees)
@@ -443,52 +443,65 @@ The main inputs for `GridSearch` are
 6. `subsamplesPerGene` (the number of subsample iterations)
 
 ******
-A few things to note: `nTrees` should be set to 10,000 at a minimum and should be as high as logistically feasible (computational time increases linearly with increasing `nTrees`). Increasing `nTrees` can increase the accuracy and consistency of approximate lnLs.
+**A few things to note:** 
 
-If you only want to run a subset of the models within `migrationArray`, you can specify this using `modelRange` (e.g., `modelRange = 1:5` will run only the first five models). This is useful if you wish to break up analyses across a computer cluster. If a single model will take a long time to run, you can also set `checkpointFile = TRUE`, which will cause results to be printed to a checkpoint file throughout the analysis, such that, if the analysis needs to be terminated prior to completion, one can resume the analysis later from the most recently analyzed grid point.
+- `nTrees` should be set to 10,000 at a minimum and should be as high as logistically feasible (computational time increases linearly with increasing `nTrees`). Increasing `nTrees` can increase the accuracy and consistency of approximate lnLs.
 
-If the dataset being analyzed contains loci that differ in their prevalence in a population (e.g., mix of diploid/haploid or organellar/nuclear loci), the relative scaling of effective population size should be inputted using `popScaling`. This argument takes a vector of scaling values, one value for each locus in the dataset (e.g., where a diploid nuclear locus = 1, X-linked locus = 0.75, mtDNA/chloroplast locus = 0.25, etc.).
+- If you only want to run a subset of the models within `migrationArray`, you can specify this using `modelRange` (e.g., `modelRange = 1:5` will run only the first five models). This is useful if you wish to break up analyses across a computer cluster. If a single model will take a long time to run, you can also set `checkpointFile = TRUE`, which will cause results to be printed to a checkpoint file throughout the analysis, such that, if the analysis needs to be terminated prior to completion, one can resume the analysis later from the most recently analyzed grid point.
+
+- If the dataset being analyzed contains loci that differ in their prevalence in a population (e.g., mix of diploid/haploid or organellar/nuclear loci), the relative scaling of effective population size should be inputted using `popScaling`. This argument takes a vector of scaling values, one value for each locus in the dataset (e.g., where a diploid nuclear locus = 1, X-linked locus = 0.75, mtDNA/chloroplast locus = 0.25, etc.).
 
 ******
 
 To run a grid search on our toy dataset, let's just analyze the first three models using `nTrees = 1000` (so it runs quickly):  
 
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
-```
+```R
   modelRange<-1:3  
   nTrees<-1000  
-  result<-GridSearch(migrationArray=migrationArray,modelRange=modelRange,popAssignments=popAssignments,
-      observedTrees=observedTrees,subsampleWeights.df=subsampleWeights.df,  
-      subsamplesPerGene=subsamplesPerGene,nTrees=nTrees) 
+  result<-GridSearch(migrationArray=migrationArray,
+  			modelRange=modelRange,popAssignments=popAssignments,
+       	observedTrees=observedTrees,
+       	subsampleWeights.df=subsampleWeights.df,
+       	subsamplesPerGene=subsamplesPerGene,
+        nTrees=nTrees) 
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
-`GridSearch` outputs a list containing 
+`GridSearch` outputs a list containing:
 
 1. Parameter grids (with AICs) for each model (itself a list)
-2. A results table that gives AICs, lnLs, *K*s (`params.K`), parameters (`params.vector`), and parameter estimates for each model
-Grid points with an `AIC = NA` signal parameter combinations that did not yield enough matches between observed and expected trees to calculate a lnL. Parameter estimates equal to `NA` occur when those parameters are not included in the model. Parameter estimates are obtained by model averaging across the grid. Parameters for *t*, *n*, *g*, and *M* are given for each time slice in the model, starting at the tips and moving toward the root (`t1` = coalescence time at time 1, `m2` = ancestral migration rates at time 2, etc.). For *t*, the coalescing populations follow the underscore and are separated by a period (e.g., `t2_1-2.3` gives the coalescence time for ancestral populations 1-2 and 3 at time 2); for *m*, migrants move from the population before the period to the population after the period (e.g., `m1_2.1` gives the rate of migration at the tips, from population 2 into population 1). 
-  
+2. A results table that gives AICs, lnLs, *K*s (`params.K`), parameters (`params.vector`), and parameter estimates for each model Grid points with an `AIC = NA` signal parameter combinations that did not yield enough matches between observed and expected trees to calculate a lnL. Parameter estimates equal to `NA` occur when those parameters are not included in the model. Parameter estimates are obtained by model averaging across the grid. Parameters for *t*, *n*, *g*, and *M* are given for each time slice in the model, starting at the tips and moving toward the root (`t1` = coalescence time at time 1, `m2` = ancestral migration rates at time 2, etc.). For *t*, the coalescing populations follow the underscore and are separated by a period (e.g., `t2_1-2.3` gives the coalescence time for ancestral populations 1-2 and 3 at time 2); for *m*, migrants move from the population before the period to the population after the period (e.g., `m1_2.1` gives the rate of migration at the tips, from population 2 into population 1). 
 
+---
 
-## VII. Saving, compiling, summarizing, and visualizing results
+###  Saving GridSearch results
 
-The `ConcatenateResults` function can compile results from across separate runs into a single table. If you are analyzing models in separate runs, you will want to save `GridSearch` results in a file to access later, e.g.:  
+Save the `GridSearch ` output results, you will want to access these reults later. If you are analyzing models in separate runs, these can be compilated later. **<font color="#ff7700">IMPORTANT NOTE: The results saved from a GridSearch should literally be named "result"</font>**, for that is the object name that the next function discussed (`ConcatenateResults`) looks for when summarizing `GridSearch` results from across different runs.
 
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
+
 ```
   save(list="result",file="phraplOutput_models1-3.rda")  
 ```
-<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
-    
-IMPORTANT NOTE: The results saved from a GridSearch should literally be named "result", for that is the object name that the next function discussed (ConcatenateResults) looks for when summarizing GridSearch results from across different runs.
-
-When concatenating results, you can either specify the names of the files containing the results to be concatenated (by giving a vector of names to the argument `rdaFiles`) or the directory in which these files are stored (using `rdaFilesPath`). So, for our toy dataset, type  
 
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
-```
-  totalResults<-ConcatenateResults(rdaFiles="phraplOutput_models1-3.rda",  
-      migrationArray=migrationArray)  
+
+---
+
+## VII. Compiling, summarizing, and visualizing results
+
+### Concatenate results from multiple runs and find the 'best' model
+
+The `ConcatenateResults` function can compile results from across separate runs into a single table. When concatenating results, you can either specify the names of the files containing the results to be concatenated (by giving a vector of names to the argument `rdaFiles`) or the directory in which these files are stored (using `rdaFilesPath`). So, for our toy dataset, type  
+
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
+
+```R
+## Concatenate results, calculate AIC and model weights.
+totalResults<-ConcatenateResults(rdaFiles="phraplOutput_models1-3.rda",  
+      migrationArray=migrationArray, outFile = "totalResults.txt")
+totalResults
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
@@ -500,12 +513,23 @@ models | AIC | lnL | rank | dAIC | wAIC | params.K | params.vector | t1_1.2 | t2
 2 | 107.427516309546 | -50.713758154773 | 2 | 2.746 | 0.189374383642894 | 3 | collapse_1 collapse_2 migration_1 | 1.10932831804684 | 2.89120505586268 | 0.12375682767371 | NA | 0.12375682767371 | NA |
 3 | 109.625209365656 | -51.812604682828 | 3 | 4.943 | 0.0631318831447129 | 3 | collapse_1 collapse_2 migration_1 | 0.776721051811846 | 7.39406167578743 | NA | 0.112313076507491 | NA | 0.112313076507491 |
 
+If you analyzed all models in a single run (not recommended for large datasets), this table is already within the output `result` of the `GridSearch`.
 
-You can calculate model averaged parameter values across all models using the `modelAverages` function, e.g.:  
+```R
+## If you ran all models in a single analyses (not recommended for large datasets).
+result$overall.results
+```
+
+---
+
+### Calculate model averages
+
+You can calculate model averaged parameter values across all models using the `modelAverages` function:  
 
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
-```
-  modelAverages<-CalculateModelAverages(totalResults)  
+```R
+## Calculate model averages across all models  
+modelAverages<-CalculateModelAverages(totalResults)  
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
@@ -515,21 +539,18 @@ t1_1.2 | t2_1-2.3 | m1_1.2 | m1_1.3 | m1_2.1 | m1_3.1 |
 ---|---|---|---|---|---|
 0.858611908209486 | 2.81732326514707 | 0.0234363729623087 | 0.00709053602169414 | 0.0234363729623087 | 0.00709053602169414 |
 
+---
+
+###  Plot the 'best' model
+
 Upon inspecting the results, you may feel inclined to create a 3-D image of the best model, e.g.:  
 
-```
-  PlotModel(migrationIndividual=migrationArray[[1]],taxonNames=c("A","B","C"))  
+```R
+bestModel<-totalResults[1,"models"]						## extract best modelID from totalResults
+PlotModel(migrationIndividual=migrationArray[[bestModel]],taxonNames=c("A","B","C"))
 ```
 
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/tutorial1.model1.png?raw=TRUE" width="400" height="400" />
 
 
-A statuette of this model can then be printed using 14 carat gold, which could be useful as a project souvenir.  
-
-```
-  http://www.shapeways.com/product/BHPZB3WUC/phrapl-four-populations?optionId=40165805  
-```
-
-
-
-
+A statuette of this model can then be 3D printed using 14 carat gold, which could be useful as a project souvenir.  Just follow [this link](http://www.shapeways.com/product/BHPZB3WUC/phrapl-four-populations?optionId=40165805).
