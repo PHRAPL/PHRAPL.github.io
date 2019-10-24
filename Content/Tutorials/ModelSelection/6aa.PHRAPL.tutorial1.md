@@ -521,11 +521,10 @@ Upon inspecting the results, you may feel inclined to create a 3-D image of the 
   PlotModel(migrationIndividual=migrationArray[[1]],taxonNames=c("A","B","C"))  
 ```
 
-![](https://github.com/ariadnamorales/phrapl-manual/blob/master/images/tutorial1.model1.pdf)
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/tutorial1.model1.pdf" width="400" height="400" />
 
 
-
-A statuette of this model can then be printed using 14 carat gold, which could be useful as a project souvenir/retirement nest egg, e.g.:  
+A statuette of this model can then be printed using 14 carat gold, which could be useful as a project souvenir.  
 
 ```
   http://www.shapeways.com/product/BHPZB3WUC/phrapl-four-populations?optionId=40165805  
