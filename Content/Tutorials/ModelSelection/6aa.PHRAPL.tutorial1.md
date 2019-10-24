@@ -4,7 +4,6 @@ title: Tutorial 1: Getting started
 parent: Tutorials
 nav_order: 1
 has_children: false
-permalink: Content/Tutorials/ModelSelection
 ---
 
 # Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**

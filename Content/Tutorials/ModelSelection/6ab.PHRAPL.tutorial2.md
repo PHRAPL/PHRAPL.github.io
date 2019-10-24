@@ -4,7 +4,6 @@ title: Tutorial 2: Subsets and power analysis
 parent: Tutorials
 nav_order: 2
 has_children: false
-permalink: Content/Tutorials/ModelSelection
 ---
 
 
