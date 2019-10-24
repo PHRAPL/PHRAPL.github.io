@@ -513,7 +513,7 @@ The default is to model average parameters across all models (assuming that the 
 
 t1_1.2 | t2_1-2.3 | m1_1.2 | m1_1.3 | m1_2.1 | m1_3.1 |
 ---|---|---|---|---|---|
-1 | 0.858611908209486 | 2.81732326514707 | 0.0234363729623087 | 0.00709053602169414 | 0.0234363729623087 | 0.00709053602169414 |
+0.858611908209486 | 2.81732326514707 | 0.0234363729623087 | 0.00709053602169414 | 0.0234363729623087 | 0.00709053602169414 |
 
 Upon inspecting the results, you may feel inclined to create a 3-D image of the best model, e.g.:  
 
