@@ -10,7 +10,7 @@ nav_order: 2
 {: .no_toc }
 
 
-### **<font color='#ff7700'>Recommended read before starting this tutorial</font>**
+### **<font color='#ff7700'>Recommended reads before starting this tutorial</font>**
 {: .no_toc }
 This tutorial will describe some of the `PHRAPL`analyses used in the papers listed below.
 - Morales AE, Jackson N, Dewey T, O’Meara BC, Carstens BC (2017) [Speciation with gene flow in North American Myotis bats](https://academic.oup.com/sysbio/article/66/3/440/2682289). Systematic Biology. 66:440-452.
