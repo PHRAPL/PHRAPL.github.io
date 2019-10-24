@@ -1,9 +1,8 @@
 ---
 layout: default
-title: Tutorial 1: Getting started
+title: Tutorial 1 – Getting started
 parent: Tutorials
 nav_order: 1
-has_children: false
 ---
 
 # Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**
