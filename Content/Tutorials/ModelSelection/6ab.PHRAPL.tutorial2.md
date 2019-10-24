@@ -23,7 +23,7 @@ This tutorial will describe some of the `PHRAPL`analyses used in the papers list
 
 ## Set up a **<font color='#006579'>PHRAPL</font>** analysis
 
-### Inout data and subsampling
+### Input data and subsampling
 
 ```r
 setwd("/working_path/sensitivityAnalyses")
