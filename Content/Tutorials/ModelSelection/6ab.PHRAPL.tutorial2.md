@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Tutorial 2 - Subsets and power analysis
+title: Tutorial 2 - Subsets
 parent: Tutorials
 nav_order: 2
 ---
 
 
-# Tutorial 2: Sensitivity and power analyses
+# Tutorial 2: Fixing migration time and performing sensitivity analyses
 {: .no_toc }
 
 
