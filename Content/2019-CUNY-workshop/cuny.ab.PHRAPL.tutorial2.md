@@ -21,7 +21,7 @@ In your R terminal type:
 ```R
 download.file("https://raw.githubusercontent.com/ariadnamorales/phrapl-manual/master/data/exampleData/1.Subsampling_GridSearch_Post.R", destfile="1.Subsampling_GridSearch_Post.R")
 
-system("R CMD BATCH 1.Subsampling_GridSearch_Post.R > 1.Subsampling_GridSearch_Post.R.out)
+system("R CMD BATCH 1.Subsampling_GridSearch_Post.R > 1.Subsampling_GridSearch_Post.R.out")
 ```
 <font size="4" face="courier" color="#ff7700">**************************************************************************</font>
 
