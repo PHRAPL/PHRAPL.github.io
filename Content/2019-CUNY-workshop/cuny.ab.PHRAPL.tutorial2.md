@@ -158,7 +158,7 @@ PlotModel(migrationArray[[3]], taxonNames=c("S","N"))
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 When you see these output files go to next step:
-<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.2.png?raw=TRUE"/>
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.2.png?raw=TRUE" width="400" height="400"/>
 
 
 ## Sensitivity analyses
@@ -316,5 +316,5 @@ dev.off()
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
-<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.5.png?raw=TRUE" width="100" height="100" />
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.5.png?raw=TRUE"/>
 
