@@ -17,12 +17,13 @@ nav_order: 2
 ## Set up a **<font color='#006579'>PHRAPL</font>** analysis
 
 In your R terminal type:
-
+<font size="4" face="courier" color="#ff7700">**************************************************************************</font>
 ```R
 download.file("https://raw.githubusercontent.com/ariadnamorales/phrapl-manual/master/data/exampleData/1.Subsampling_GridSearch_Post.R", destfile="1.Subsampling_GridSearch_Post.R")
 
 system("R CMD BATCH 1.Subsampling_GridSearch_Post.R > 1.Subsampling_GridSearch_Post.R.out)
 ```
+<font size="4" face="courier" color="#ff7700">**************************************************************************</font>
 
 ### Load input files from GitHub
 
@@ -39,14 +40,13 @@ library(phrapl)
 ## migrationArray
 load(url("https://github.com/ariadnamorales/phrapl-manual/raw/master/data/sensitivityAnalyses/example/input/MigrationArray_2pop_3K.rda"))
 
-## 
+## Input Files
 currentAssign<-read.table(file="https://raw.githubusercontent.com/ariadnamorales/phrapl-manual/master/data/sensitivityAnalyses/example_with_outputFiles/input/Pleth_align.txt", head=TRUE)
-
 currentTrees<-ape::read.tree("https://raw.githubusercontent.com/ariadnamorales/phrapl-manual/master/data/sensitivityAnalyses/example_with_outputFiles/input/Pleth_bestTree.tre")
 
 ```
 
-### Input data and subsampling
+### Subsampling
 
 ```r
 ########################
