@@ -76,6 +76,7 @@ If you are beginning with sequence data, note that `PHRAPL` includes a function 
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 ```
   library(ape)
+  library(phrapl)
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
