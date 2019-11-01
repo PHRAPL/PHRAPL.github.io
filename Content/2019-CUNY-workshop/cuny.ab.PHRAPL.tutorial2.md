@@ -24,9 +24,9 @@ download.file("https://raw.githubusercontent.com/ariadnamorales/phrapl-manual/ma
 system("R CMD BATCH 1.Subsampling_GridSearch_Post.R > 1.Subsampling_GridSearch_Post.R.out)
 ```
 
-**This script will be running in the background while we discuss what is going on:**
-
 ### Load input files from GitHub
+
+**<font color="#ff7700">Do not run this script in your R terminal, it will be running in the background while we discuss what is going on: </font>**
 
 ```R
 setwd("/working_path/sensitivityAnalyses")
@@ -122,9 +122,11 @@ system(paste0("rm ", getwd(), "/1.Subsampling_GridSearch_Post.R.out"))
 
 
 
-**We will start from here:**
+**<font color="#ff7700">We will start from here:</font>**
 
 ### Post-process
+
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 ```r
 setwd("/working_path/sensitivityAnalyses") ### working Dir in previous script
@@ -153,7 +155,11 @@ PlotModel(migrationArray[[3]], taxonNames=c("S","N"))
 
 ```
 
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
+
 ## Sensitivity analyses
+
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 
 ```r 
@@ -202,8 +208,11 @@ RoutFilename<-read.table(file=paste(getwd(),'/results/RoutFiles/matches_2.RunGri
 GenerateSetLoci(lociRange=lociRange,NintervalLoci=NintervalLoci,RoutFilename,rdaFilename,migrationArray=migrationArray,modelRange=modelRange,subsamplesPerGene=subsamplesPerGene,collapseStarts=collapseStarts,migrationStarts=migrationStarts,n0multiplierStarts=n0multiplierStarts,setCollapseZero=setCollapseZero,cumulative=TRUE,nTrees=nTrees,dAIC.cutoff=2,nEq=nEq, subsampleWeightsVec=subsampleWeightsVec)
 ```
 
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 ### Postprocess RDA files per subset
+
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 ```r
 #########################################
@@ -222,7 +231,11 @@ for(i in 1:5){                    ## ------> Be careful to specify the total num
 }
 ```
 
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
+
 ### Plot subsets
+
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 ```r
 ########################
@@ -295,6 +308,6 @@ heatmap.2(as.matrix(t(model_wAIC[2:length(model_wAIC)])), lmat = lmat, lhei=lhei
 dev.off()
 ```
 
-
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 

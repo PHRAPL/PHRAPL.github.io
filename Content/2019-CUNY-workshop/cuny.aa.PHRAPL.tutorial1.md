@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Tutorial 2 - Subsets
+title: Tutorial 1 - Setting up and running PHRAPL
 parent: CUNY-workshop
-nav_order: 2
+nav_order: 1
 ---
 
 # Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**
