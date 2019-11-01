@@ -313,5 +313,5 @@ dev.off()
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
-<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.5.png?raw=TRUE"/>
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.5.png?raw=TRUE" width="400" height="400" />
 
