@@ -159,8 +159,9 @@ PlotModel(migrationArray[[3]], taxonNames=c("S","N"))
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 Plot of the 'best' model:
+<kbd>
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.2.png?raw=TRUE" width="400" height="400"/>
-
+</kbd>
 
 ## Sensitivity analyses
 
@@ -213,8 +214,9 @@ GenerateSetLoci(lociRange=lociRange,NintervalLoci=NintervalLoci,RoutFilename,rda
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 When you see these output files go to next step:
+<kbd>
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.3.png?raw=TRUE"/>
-
+</kbd>
 
 ### Postprocess RDA files per subset
 
@@ -239,8 +241,9 @@ for(i in 1:5){                    ## ------> Be careful to specify the total num
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 When you see these output files go to next step:
+<kbd>
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.4.png?raw=TRUE"/>
-
+</kbd>
 
 ### Plot subsets
 
@@ -316,6 +319,6 @@ heatmap.2(as.matrix(t(model_wAIC[2:length(model_wAIC)])), lmat = lmat, lhei=lhei
 dev.off()
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
-
+<kbd>
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.5.png?raw=TRUE"/>
-
+</kbd>
