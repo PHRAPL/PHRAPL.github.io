@@ -121,8 +121,9 @@ system(paste0("rm ", getwd(), "/1.Subsampling_GridSearch_Post.R.out"))
 ```
 
 When you see these output files go to next step:
+<kbd>
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.1.png?raw=TRUE"/>
-
+</kbd>
 
 **<font color="#ff7700">We will start from here:</font>**
 
