@@ -119,12 +119,12 @@ save(list=ls(), file=paste0(getwd(),"/results/Pleth_",min(modelRange),"_",max(mo
 system(paste0("mv ", getwd(), "/1.Subsampling_GridSearch_Post.Rout ", getwd(), "/results/RoutFiles/1.Subsampling_GridSearch_Post.Rout"))
 system(paste0("rm ", getwd(), "/1.Subsampling_GridSearch_Post.R.out"))	
 ```
-**<font color="#ff7700">We will start from here:</font>**
 
+When you see these output files go to next step:
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.1.png?raw=TRUE"/>
 
 
-
+**<font color="#ff7700">We will start from here:</font>**
 
 ### Post-process
 
@@ -157,6 +157,7 @@ PlotModel(migrationArray[[3]], taxonNames=c("S","N"))
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
+When you see these output files go to next step:
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.2.png?raw=TRUE"/>
 
 
@@ -210,6 +211,7 @@ GenerateSetLoci(lociRange=lociRange,NintervalLoci=NintervalLoci,RoutFilename,rda
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
+When you see these output files go to next step:
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.3.png?raw=TRUE"/>
 
 
@@ -235,6 +237,7 @@ for(i in 1:5){                    ## ------> Be careful to specify the total num
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
+When you see these output files go to next step:
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.4.png?raw=TRUE"/>
 
 
@@ -313,5 +316,5 @@ dev.off()
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
-<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.5.png?raw=TRUE" width="400" height="400" />
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.5.png?raw=TRUE" width="100" height="100" />
 
