@@ -1,3 +1,10 @@
+---
+layout: default
+title: Tutorial 2 - Subsets
+parent: CUNY-workshop
+nav_order: 2
+---
+
 # Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**
 {: .no_toc }
 
