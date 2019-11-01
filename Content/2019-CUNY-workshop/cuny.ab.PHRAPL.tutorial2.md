@@ -157,7 +157,7 @@ PlotModel(migrationArray[[3]], taxonNames=c("S","N"))
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
-When you see these output files go to next step:
+Plot of the 'best' model:
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.2.png?raw=TRUE" width="400" height="400"/>
 
 
