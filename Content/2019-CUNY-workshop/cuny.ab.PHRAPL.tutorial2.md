@@ -119,15 +119,16 @@ save(list=ls(), file=paste0(getwd(),"/results/Pleth_",min(modelRange),"_",max(mo
 system(paste0("mv ", getwd(), "/1.Subsampling_GridSearch_Post.Rout ", getwd(), "/results/RoutFiles/1.Subsampling_GridSearch_Post.Rout"))
 system(paste0("rm ", getwd(), "/1.Subsampling_GridSearch_Post.R.out"))	
 ```
-
-
-
 **<font color="#ff7700">We will start from here:</font>**
+
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.1.png?raw=TRUE"/>
+
+
+
 
 ### Post-process
 
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
-
 ```r
 setwd("/working_path/sensitivityAnalyses") ### working Dir in previous script
 
@@ -154,14 +155,14 @@ PlotModel(migrationArray[[3]], taxonNames=c("S","N"))
 #PlotModel(migrationArray[[4]], taxonNames=c("S","N"))
 
 ```
-
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
+
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.2.png?raw=TRUE"/>
+
 
 ## Sensitivity analyses
 
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
-
-
 ```r 
 ################################
 ### 4. Sensitivity analyses  ###
@@ -207,8 +208,10 @@ RoutFilename<-read.table(file=paste(getwd(),'/results/RoutFiles/matches_2.RunGri
 # Command line to run function GenerateSetLoci
 GenerateSetLoci(lociRange=lociRange,NintervalLoci=NintervalLoci,RoutFilename,rdaFilename,migrationArray=migrationArray,modelRange=modelRange,subsamplesPerGene=subsamplesPerGene,collapseStarts=collapseStarts,migrationStarts=migrationStarts,n0multiplierStarts=n0multiplierStarts,setCollapseZero=setCollapseZero,cumulative=TRUE,nTrees=nTrees,dAIC.cutoff=2,nEq=nEq, subsampleWeightsVec=subsampleWeightsVec)
 ```
-
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
+
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.3.png?raw=TRUE"/>
+
 
 ### Postprocess RDA files per subset
 
@@ -230,13 +233,14 @@ for(i in 1:5){                    ## ------> Be careful to specify the total num
     write.table(totalData, file=paste(pathtotalData_subsets,"totalData_subset",i,".txt",sep=""), sep="\t", row.names=FALSE)
 }
 ```
-
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
+
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.4.png?raw=TRUE"/>
+
 
 ### Plot subsets
 
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
-
 ```r
 ########################
 ### 5. Plot subsets  ###
@@ -307,7 +311,7 @@ heatmap.2(as.matrix(t(model_wAIC[2:length(model_wAIC)])), lmat = lmat, lhei=lhei
 	main="wAIC for each model per locus")
 dev.off()
 ```
-
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
+<img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.5.png?raw=TRUE"/>
 
