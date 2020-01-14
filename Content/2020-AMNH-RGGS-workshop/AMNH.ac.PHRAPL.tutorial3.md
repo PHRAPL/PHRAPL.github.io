@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tutorial 2 - Subsets
+title: Tutorial 3 - Species Delimitation
 parent: AMNH-RGGS-workshop
 nav_order: 3
 ---
