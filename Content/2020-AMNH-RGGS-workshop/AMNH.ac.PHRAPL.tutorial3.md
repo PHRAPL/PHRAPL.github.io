@@ -100,7 +100,7 @@ save(list="result",file="phraplOutput_models1-3_1species.rda")
 totalResults<-ConcatenateResults(migrationArray=migrationArray)  
 ```
 
-   | models | AIC | params.K | rank | dAIC | wAIC | params.vector | t1_1.2 | t2_1-2.3 | m1_1.2 | m1_1.3 | m1_2.1 | m1_3.1  | 
+(_real order_) | models | AIC | params.K | rank | dAIC | wAIC | params.vector | t1_1.2 | t2_1-2.3 | m1_1.2 | m1_1.3 | m1_2.1 | m1_3.1  | 
 ---| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---  | 
 1 | 1 |  102.409023727  |        2 |     1 |    0.000 |  7.80744156813e-01 |              collapse_1 collapse_2 |  0.885953900419 |  4.28733673377 |              NA  |             NA |              NA   |            NA  | 
 4 | 2 |  105.627484186   |       3 |     2 |    3.218 |  1.56217225852e-01 |  collapse_1 collapse_2 migration_1 |  1.429951012557 |  5.54272642869 |  0.137939540376 |              NA |  0.137939540376  |             NA | 
