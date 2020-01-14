@@ -17,3 +17,6 @@ Simple example to get familiar with the basics of `PHRAPL` and analyze a simulat
 ## **[Tutorial 2:](https://phrapl.github.io/Content/2020-AMNH-RGGS-workshop/AMNH.ab.PHRAPL.tutorial2.html)** Sensitivity analyses
 Example to perform sensitivity analyses in subsets of loci. Dataset of 2 populations Plethodon salamanders. <br/>
 
+
+## **[Tutorial 3:](https://phrapl.github.io/Content/2020-AMNH-RGGS-workshop/AMNH.ac.PHRAPL.tutorial3.html)** Species delimitation
+Example for how to test the existance of 1, 2, or 3 species using the first three models from Tutorial 1. <br/>
