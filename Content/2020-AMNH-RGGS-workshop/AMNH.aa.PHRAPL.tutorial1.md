@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tutorial 1 - Setting up and running PHRAPL
-parent: 2020-AMNH-RGGS-workshop
+parent: AMNH-RGGS-workshop
 nav_order: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tutorial 2 - Subsets
-parent: 2020-AMNH-RGGS-workshop
+parent: AMNH-RGGS-workshop
 nav_order: 2
 ---
 
