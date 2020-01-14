@@ -165,6 +165,7 @@ To subsample our toy dataset using 10 replicates and 3 tips per population, do t
   observedTrees<-PrepSubsampling(assignmentsGlobal=assignmentsGlobal,observedTrees=observedTrees,
       popAssignments=popAssignments,subsamplesPerGene=subsamplesPerGene,outgroup=outgroup,
       outgroupPrune=outgroupPrune)
+  plot(observedTrees[[1]][1])
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
