@@ -21,6 +21,7 @@ Below is an example for how to test the existance of 1, 2, or 3 species using th
 First, load input data and set relevant parameters:
 
 ```
+setwd("~/Desktop")
 library(phrapl)
 library(ape)
   
@@ -137,5 +138,5 @@ method | x | n | mean | lower | upper |
 --- | --- | --- | --- | --- | --- | 
 exact | 8827 | 10000 | 0.824137931034 | 0.81444013188 | 0.833500169879 | 
 
-See [this paper](https://academic.oup.com/sysbio/article/66/5/799/2726792) for a reference on how to interpret this metric.
+See [this paper](https://academic.oup.com/sysbio/article/66/5/799/2726792) for a reference on how to interpret this metric, and pay special attention to [Fig 6.](https://academic.oup.com/view-large/figure/95743527/syw117f6.tif)
 _"Thus, as a rule of thumb, gdi values less than 0.2 suggest that a single species exists; gdi values above 0.7 suggest there are two species. Values in between indicate ambiguous delimitation (but of course, with values near 0.2 and 0.7 providing stronger or weaker evidence for a single species, respectively), which reflects the reality that there exists a speciation gray zone, where a definitive answer cannot easily be found."_
