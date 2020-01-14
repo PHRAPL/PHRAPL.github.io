@@ -53,11 +53,12 @@ which grabs `PHRAPL` from Github and installs it.
 *****
 
 If you find an error during the installation, it is probably related to P2C2M, go to the [CRAN repository](https://cran.r-project.org/src/contrib/Archive/P2C2M/) and download the *.gz folder.
+You can type the following in your terminal:
 
-``
+```
 wget https://cran.r-project.org/src/contrib/Archive/P2C2M/P2C2M_0.7.6.tar.gz
 R CMD INSTALL P2C2M_0.7.6.tar.gz
-``
+```
 
 ## **<font color='#006579'>PHRAPL</font>** help
 
