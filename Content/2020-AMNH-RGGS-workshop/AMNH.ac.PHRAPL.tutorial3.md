@@ -8,13 +8,9 @@ nav_order: 3
 # Tutorial 3: Testing species delimitation hypotheses
 {: .no_toc }
 
-Finally, if the question of interest pertains to the delimitation of putative species that are specified in the dataset, then for a given hypothesized tree, you will want to compare the fit of a "full tree" model for which all coalescence times are estimated (i.e., are non-zero) to "collapsed" models for which one or more coalescence times are set to be zero. To do this, rather than adding additional models to a `migrationArray`, these collapsed models should be specified when running a `GridSearch`. Thus, for a given set of models in a `migrationArray` that specify fully resolved trees, the collapsing of specific nodes can be specified using `GridSearch`s `setCollapseZero` argument. This argument inputs a vector that defines which coalescence time parameters in a model one would like to be set to zero. So, for our toy dataset, setting `setCollapseZero = 1` when fitting an ((A,B),C) isolation-only model will effectively collapse populations A and B into a single population; setting `setCollapseZero = 1:2` will simulate a single panmictic population.
+If the question of interest pertains to the delimitation of putative species that are specified in the dataset, then for a given hypothesized tree, you will want to compare the fit of a "full tree" model for which all coalescence times are estimated (i.e., are non-zero) to "collapsed" models for which one or more coalescence times are set to be zero. To do this, rather than adding models to a `migrationArray`, these collapsed models should be specified when running a `GridSearch`. Thus, for a given set of models in a `migrationArray` that specify fully resolved trees, the collapsing of specific nodes can be specified using `GridSearch`s  `setCollapseZero` argument. This argument inputs a vector that defines which coalescence time parameters in a model one would like to be set to zero. So, for our toy dataset, setting `setCollapseZero = 1` when fitting an ((A,B),C) isolation-only model will effectively collapse populations A and B into a single population; setting `setCollapseZero = 1:2` will simulate a single panmictic population.
 
-Below is an example for how to test the existance of 1, 2, or 3 species using the first three models run above using the toy dataset. I have increased the number of nTrees to 10000 such there are enough simulated trees to calculate the log-likelihood for all the models. These runs will take a few minutes.
-
-### **<font color='#ff7700'>This tutorial assumes you have read the paper that describes this method and you are familiar with how to use <font color='#006579'>PHRAPL</font> functions, especially with how to design and edit models.</font>**
-{: .no_toc }
-- Jackson N, Carstens BC, Morales AE, O’Meara BC (2017) [Species delimitation with gene flow](https://academic.oup.com/sysbio/article/66/5/799/2726792?searchresult=1). Systematic Biology. 66:799-812.
+Below is an example for how to test the existance of 1, 2, or 3 species using the first three models run above using the toy dataset (see Tutorial 1). We have increased the number of nTrees to 10000 such there are enough simulated trees to calculate the log-likelihood for all the models. These runs will take a few minutes.
 
 ---
 1. TOC
@@ -22,9 +18,40 @@ Below is an example for how to test the existance of 1, 2, or 3 species using th
 ---
 
 ## Prepare data
-First, set relevant parameters:
+First, load input data and set relevant parameters:
 
 ```
+library(phrapl)
+  
+trees<-read.tree(paste(path.package("phrapl"),"/extdata/trees.tre",sep=""))
+assignFile<-read.table(paste(path.package("phrapl"),"/extdata/cladeAssignments.txt",sep=""),
+     header=TRUE,stringsAsFactors=FALSE)
+     
+popAssignments<-list(c(3,3,3))
+assignmentsGlobal<-assignFile  
+observedTrees<-trees  
+popAssignments<-list(c(3,3,3))  
+subsamplesPerGene<-10  
+outgroup=TRUE  
+outgroupPrune=TRUE  
+  
+observedTrees<-PrepSubsampling(assignmentsGlobal=assignmentsGlobal,observedTrees=observedTrees,
+      popAssignments=popAssignments,subsamplesPerGene=subsamplesPerGene,outgroup=outgroup,
+      outgroupPrune=outgroupPrune)
+subsampleWeights.df<-GetPermutationWeightsAcrossSubsamples(popAssignments=popAssignments,
+      observedTrees=observedTrees)
+      
+popVector<-popAssignments[[1]]  
+maxK<-3  
+maxMigrationK=1  
+maxN0K=1  
+maxGrowthK=0  
+forceTree=TRUE  
+forceSymmetricalMigration=TRUE  
+migrationArray<-GenerateMigrationIndividuals(popVector=popVector,maxK=maxK,  
+      maxMigrationK=maxMigrationK,maxN0K=maxN0K,maxGrowthK=maxGrowthK,
+      forceTree=forceTree,forceSymmetricalMigration=forceSymmetricalMigration)
+
 modelRange<-1:3  
 nTrees<-10000  
 ```
