@@ -52,6 +52,13 @@ which grabs `PHRAPL` from Github and installs it.
 
 *****
 
+If you find an error during the installation, it is probably related to P2C2M, go to the [CRAN repository](https://cran.r-project.org/src/contrib/Archive/P2C2M/) and download the *.gz folder.
+
+``
+wget https://cran.r-project.org/src/contrib/Archive/P2C2M/P2C2M_0.7.6.tar.gz
+R CMD INSTALL P2C2M_0.7.6.tar.gz
+``
+
 ## **<font color='#006579'>PHRAPL</font>** help
 
 Now PHRAPL is ready to run. Type `library(help=phrapl)` to get a list of functions with documentation. To open a help file for a particular function, type `?function_name`.
@@ -165,6 +172,7 @@ To subsample our toy dataset using 10 replicates and 3 tips per population, do t
   observedTrees<-PrepSubsampling(assignmentsGlobal=assignmentsGlobal,observedTrees=observedTrees,
       popAssignments=popAssignments,subsamplesPerGene=subsamplesPerGene,outgroup=outgroup,
       outgroupPrune=outgroupPrune)
+  observedTrees
   plot(observedTrees[[1]][1])
 ```
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
@@ -367,7 +375,7 @@ A statuette of this model can then be 3D printed using 14 carat gold, which coul
 
 
 
-## If there is time
+## Build your own model
 
 ### Generating a single* a priori *model*
 
