@@ -92,6 +92,18 @@ result<-GridSearch(migrationArray=migrationArray,modelRange=modelRange,
 save(list="result",file="phraplOutput_models1-3_1species.rda") 
 ```
 
+If for any reason the steps above are taking to long or you find an error, download the output files and continue with the tutorial.
+
+```
+download.file("https://raw.githubusercontent.com/ariadnamorales/phrapl-manual/master/data/tutorial3/phraplOutput_models1-3_1species.rda", destfile="phraplOutput_models1-3_1species.rda")
+download.file("https://raw.githubusercontent.com/ariadnamorales/phrapl-manual/master/data/tutorial3/phraplOutput_models1-3_2species.rda", destfile="phraplOutput_models1-3_2species.rda")
+download.file("https://raw.githubusercontent.com/ariadnamorales/phrapl-manual/master/data/tutorial3/phraplOutput_models1-3_3species.rda", destfile="phraplOutput_models1-3_3species.rda")
+
+```
+
+
+
+
 ## Post-processing
 
 ### Concatenate results:
@@ -111,7 +123,8 @@ totalResults<-ConcatenateResults(migrationArray=migrationArray)
 5 | 2 |  155.861451635  |        2  |    6 |   53.452 |  1.92998715801e-12  |            collapse_2 migration_1 |  0.000000000000 |  5.74580965294 |  1.544042397162 |              NA |  1.544042397162 |              NA | 
 9 | 3 |  265.459991526  |        1  |    7 |  163.051 |  3.06502455529e-36  |                       migration_1 |  0.000000000000 |  0.00000000000 |              NA |  2.149987786716 |              NA |  2.149987786716 | 
 6 | 2 |  292.400803632  |        1 |     8 |  189.992 |  4.32782946843e-42  |                       migration_1 |  0.000000000000 |  0.00000000000 |  0.460000005209 |              NA |  0.460000005209             NA | 
-3 | 1 |  340.400803632  |        0  |    9 |  237.992 |  1.63381385280e-52  |                                   0.000000000000 |  0.00000000000 |              NA |              NA |              NA |              NA | 
+3 | 1 |  340.400803632  |        0  |    9 |  237.992 |  1.63381385280e-52  |                                  |  0.000000000000 |  0.00000000000 |              NA |              NA |              NA |              NA | 
+
 
 
 ### Model averages
