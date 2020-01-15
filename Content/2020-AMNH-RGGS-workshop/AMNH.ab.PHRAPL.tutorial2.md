@@ -322,3 +322,5 @@ dev.off()
 <kbd>
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/output.tutorial2/outputFiles.5.png?raw=TRUE"/>
 </kbd>
+
+With many more loci and models, you could build a plot such as [this one](https://academic.oup.com/view-large/figure/87818052/syw100f2.tif).
