@@ -30,7 +30,11 @@ system("R CMD BATCH 1.Subsampling_GridSearch_Post.R > 1.Subsampling_GridSearch_P
 **<font color="#ff7700">Do not run this script in your R terminal, it will be running in the background while we discuss what is going on: </font>**
 
 ```R
-setwd("/working_path/sensitivityAnalyses")
+setwd("/working_path/sensitivityAnalyses")  # <----- Change this line if your are running the tutorial step by step
+
+## Create output dirs
+	system(paste0("mkdir ", getwd(),  "/results"))
+	system(paste0("mkdir ", getwd(),  "/results/RoutFiles"))
 
 ## Load libraries and functions
 library(ape)
