@@ -24,11 +24,11 @@ August 16-20, 2021 – **<font color='#006579'>PHRAPL</font> workshop held on Au
 ---
 # Tutorials
 
-## **[Tutorial 1:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html)** Setting up and running PHRAPL 
+## **[Tutorial 1:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html)** The basis of demographic model selection with PHRAPL 
 Simple example to get familiar with the basics of `PHRAPL` and analyze a simulated dataset of 3 populations. <br/>
 
 
-## **[Tutorial 2:]()** Sensitivity analyses
+## **[Tutorial 2:]()** Divergence with gene flow vs. secondary contact
 Example to perform sensitivity analyses in subsets of loci. Dataset of 2 populations Plethodon salamanders. <br/>
 
 

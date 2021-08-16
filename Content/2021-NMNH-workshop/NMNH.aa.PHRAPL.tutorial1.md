@@ -5,7 +5,7 @@ parent: NMNH-workshop
 nav_order: 1
 ---
 
-# Tutorial 1: Setting Up and Running **<font color='#006579'>PHRAPL</font>**
+# Tutorial 1: The basis of demographic model selection with **<font color='#006579'>PHRAPL</font>**
 {: .no_toc }
 
 The purpose of this tutorial is to provide a brief introduction for using `PHRAPL`. **It assumes that you have already installed `PHRAPL` and its dependencies.** It will walk you through the necessary steps required for preparing a dataset and model set, running an analysis, and summarizing results, all using a toy dataset. There are many options that one can persue when running a `PHRAPL` analysis, which could get a bit confusing for someone using the program for the first time. For this reason, **we have highlighted with <font color="#ff7700">orange asterisks</font> those blocks of code that constitute the minimum steps that must be taken to run a PHRAPL analysis using the toy dataset.** 
@@ -20,6 +20,16 @@ The purpose of this tutorial is to provide a brief introduction for using `PHRAP
 For more detailed information about any of the tasks discussed below, take a look at the help files within `PHRAPL`. Type `library(help=phrapl)` to get a list of functions with documentation. To open a help file for a particular function, type `?function_name`. You can also find detailed explanations in this website about how to [prepare input files](https://phrapl.github.io/Content/InputFiles), undertand [how models are built](https://phrapl.github.io/Content/GenerateSetModels), and [how to choose/change default settings](https://phrapl.github.io/Content/RunningPHRAPL).
 
 ***
+
+## Activate conda environment and load R
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
+**<font color="#ff7700">Run all the following commands in your shell terminal (not in your R terminal).</font>**
+```shell
+## activate conda environment and load R
+conda activate OX_env_phrapl
+R 
+```
+<font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
 
 ## Importing your dataset into R
@@ -427,6 +437,3 @@ Thus, the same `migrationIndividual` as above can be produced by simply typing
   migrationIndividual<-GenerateMigrationIndividualsOneAtATime(collapseList=collapseList,
       migrationList=migrationList)  
 ```
-
-
-## 
