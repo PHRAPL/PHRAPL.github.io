@@ -11,8 +11,14 @@ permalink: Content/2021-NMNH-workshop
 ## Smithsonian Species Delimitation 2021 – August 16-20
 
 ---
-# Tutorials
+## Installation
 
+– [Conda Intro / Install](https://github.com/SmithsonianWorkshops/Species_Delimitation_2021_08/blob/main/conda_instructions.md)
+
+– [Create conda environment and install `PHRAPL`](https://phrapl.github.io/Content/1.Installation.html) 
+
+---
+# Tutorials
 
 ## **[Tutorial 1:]()** Setting up and running PHRAPL 
 Simple example to get familiar with the basics of `PHRAPL` and analyze a simulated dataset of 3 populations. <br/>
@@ -27,7 +33,6 @@ Example for how to test the existance of 1, 2, or 3 species using the first thre
 
 ---
 ## Workshop Info
-– [Conda Intro / Install](https://github.com/SmithsonianWorkshops/Species_Delimitation_2021_08/blob/main/conda_instructions.md)
 
 – [Agenda](https://docs.google.com/document/d/1onnx5ixblgBtEk8akRsvFmvtLPl3-8xl5Hoq6JUhb0g/edit)
 
