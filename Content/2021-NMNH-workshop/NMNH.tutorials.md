@@ -24,7 +24,7 @@ August 16-20, 2021 – **<font color='#006579'>PHRAPL</font> workshop held on Au
 ---
 # Tutorials
 
-## **[Tutorial 1:]()** Setting up and running PHRAPL 
+## **[Tutorial 1:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html)** Setting up and running PHRAPL 
 Simple example to get familiar with the basics of `PHRAPL` and analyze a simulated dataset of 3 populations. <br/>
 
 
