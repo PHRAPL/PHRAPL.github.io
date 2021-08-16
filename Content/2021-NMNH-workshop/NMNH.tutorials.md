@@ -8,7 +8,7 @@ permalink: Content/2021-NMNH-workshop
 ---
 **Materials are being updated (will be available on Wednesday August 18)**
 
-# Smithsonian Species Delimitation Workshop 
+# **Smithsonian Species Delimitation Workshop**
 August 16-20, 2021 – **<font color='#006579'>PHRAPL</font> workshop held on August 18 from 1:00 pm to 2:30 pm (GMT-4).**
 [Zoom link](https://zoom.us/j/95658176247?pwd=ekl0eHFrQnZVU3FtVFBmUE1zamVnZz09) (you may need to pre-register).
 [Join the Slack channel.](https://sppdelimitworkshop.slack.com/archives/C028GRU9N01)
