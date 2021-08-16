@@ -15,7 +15,7 @@ August 16-20, 2021 – **<font color='#006579'>PHRAPL</font> workshop held on Au
 
 ---
 ## Installation
-**<font color='#ff7700'>Please, install `PHRAPL` before the tutorial sessions begin.</font>**
+**<font color='#ff7700'>Please, install `PHRAPL` before the tutorial session begins.</font>**
 
 – [Conda Intro / Install](https://github.com/SmithsonianWorkshops/Species_Delimitation_2021_08/blob/main/conda_instructions.md)
 
