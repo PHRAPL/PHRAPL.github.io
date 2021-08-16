@@ -27,7 +27,9 @@ Example for how to test the existance of 1, 2, or 3 species using the first thre
 
 ---
 ## Workshop Info
-[Conda Intro / Install](https://github.com/SmithsonianWorkshops/Species_Delimitation_2021_08/blob/main/conda_instructions.md)
-[Agenda](https://docs.google.com/document/d/1onnx5ixblgBtEk8akRsvFmvtLPl3-8xl5Hoq6JUhb0g/edit)
-[Workshop GitHub - materials for other packages](https://github.com/SmithsonianWorkshops/Species_Delimitation_2021_08)
+– [Conda Intro / Install](https://github.com/SmithsonianWorkshops/Species_Delimitation_2021_08/blob/main/conda_instructions.md)
+
+– [Agenda](https://docs.google.com/document/d/1onnx5ixblgBtEk8akRsvFmvtLPl3-8xl5Hoq6JUhb0g/edit)
+
+– [Workshop GitHub - materials for other packages](https://github.com/SmithsonianWorkshops/Species_Delimitation_2021_08)
 
