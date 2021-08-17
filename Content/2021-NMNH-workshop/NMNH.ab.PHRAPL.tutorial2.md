@@ -672,8 +672,8 @@ This table shows that model 4 (secondary contact) achieved a wAIC close to 1, me
 
 | models | AIC | params.K | rank | dAIC | wAIC | params.vector | m1_1.2 | t1_1.2 | m1_2.1 | m2_1.2 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_secCont.png" width="50%" height="50%" />  4 | 576.845979847045 | 2 | 1 | 0 | 0.999 | collapse_1 migration_1 | 2.550 | NA | 2.550 | NA |
-| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_ancMig.png" width="50%" height="50%" /> 3 | 672.559805879929 | 2 | 2 | 95.714 | 1.644e-21 | collapse_1 migration_1 | NA | NA | NA | 4.64 |
-| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_constMig.png" width="50%" height="50%" /> 2 | 689.119815425158 | 2 | 3 | 112.274 | 4.168e-25 | collapse_1 migration_1 | 4.639 | 1.109 | NA | NA |
-| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_noMig.png" width="50%" height="50%" /> 1 | 820.386276356992 | 1 | 4 | 243.54 | 1.306e-53 | collapse_1 | NA | 0.845 | NA | NA |
+| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_secCont.png" width="100%" height="100%" />  4 | 576.845979847045 | 2 | 1 | 0 | 0.999 | collapse_1 migration_1 | 2.550 | NA | 2.550 | NA |
+| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_ancMig.png" width="100%" height="100%" /> 3 | 672.559805879929 | 2 | 2 | 95.714 | 1.644e-21 | collapse_1 migration_1 | NA | NA | NA | 4.64 |
+| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_constMig.png" width="100%" height="100%" /> 2 | 689.119815425158 | 2 | 3 | 112.274 | 4.168e-25 | collapse_1 migration_1 | 4.639 | 1.109 | NA | NA |
+| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_noMig.png" width="100%" height="100%" /> 1 | 820.386276356992 | 1 | 4 | 243.54 | 1.306e-53 | collapse_1 | NA | 0.845 | NA | NA |
 
