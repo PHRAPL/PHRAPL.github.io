@@ -9,7 +9,7 @@ nav_order: 2
 # Tutorial 2: Divergence with gene flow vs. secondary contact
 {: .no_toc }
 
-**<font color='#ff7700'>This tutorial assumes that you have already followed and understand the steps of <p><a href="https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html">Tutorial 1</a></p> </font>**
+**<font color='#ff7700'>This tutorial assumes that you have already followed and understand the steps of <a href="https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html">Tutorial 1</a></font>**
 
 **The first part** of this tutorial will walk you through a `PHRAPL` analysis to **recalculate model weights (wAIC) in gradually increasing subsets of loci** and how to **handle haploid and diploid loci in the same analysis.** The figure below represents how results from these type of analyses could be summarized. Each column represents one model, each row represent a subset of loci (gradually increasing in number), and the color represents the model weight (wAIC analogous to model probability), that is higher as it gets darker.
 
