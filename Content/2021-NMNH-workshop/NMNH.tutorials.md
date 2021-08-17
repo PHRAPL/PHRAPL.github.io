@@ -33,9 +33,9 @@ Reference papers:
 
 ## **[Tutorial 2:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.ab.PHRAPL.tutorial2.html)** Performing sensitivity analyses and fixing migration time 
 
-* **Part 1:** Perform sensitivity analyses in subsets of loci. * **Do I need more data?** * This analysis can help you answer that question. Dataset of 2 populations of *Plethodon* salamanders, includes haploid and diploid loci. <br/>
+* **Part 1:** Perform sensitivity analyses in subsets of loci. **Do I need more data?** This analysis can help you answer that question. Dataset of 2 populations of *Plethodon* salamanders, includes haploid and diploid loci. <br/>
 
-* **Part 2:** Compare models with gene flow that occurred at different time intervals. * **Gene flow has occurred among my study organisms.** * Here you will be able to infer * **"when it started or stopped"** * Has it been constant throughout time?, did it occur only during incipient stages of divergence or did it occur just recently?. Dataset of 2 unisexual and sexual species of *Ambystoma* salamanders. <br/>
+* **Part 2:** Compare models with gene flow that occurred at different time intervals. **Gene flow has occurred among my study organisms.** Here you will be able to infer **"when did it start or stop?"** Has it been constant throughout time?, did it occur only during incipient stages of divergence or did it occur just recently?. Dataset of 2 unisexual and sexual species of *Ambystoma* salamanders. <br/>
 
 Recommended reads of empirical examples:
 * Morales AE, Jackson N, Dewey T, O’Meara BC, Carstens BC (2017) [Speciation with gene flow in North American *Myotis* bats](https://academic.oup.com/sysbio/article/66/3/440/2682289). Systematic Biology. 66:440-452. <br/>
