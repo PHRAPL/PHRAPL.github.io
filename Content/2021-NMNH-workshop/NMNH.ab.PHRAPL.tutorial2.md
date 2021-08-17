@@ -420,7 +420,7 @@ To generate such models, we need to start with "traditional" `PHRAPL` models wit
  
 ```
 In this tutorial we, start with 2 models.
-```R
+```r
 ## load R (if you haven´t)
 ## Load libraries
 library(phrapl)	
