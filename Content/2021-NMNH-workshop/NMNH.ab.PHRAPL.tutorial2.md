@@ -44,7 +44,7 @@ R
 ****
 
 ### Download files and scripts – run them in the background
-The following commands will download all the required files and scripts for this tutorial. And, **the analysis will start running in the background while we discuss what is happening in each step.** In your terminal type:
+The following commands will download all the required files and [scripts](https://github.com/ariadnamorales/phrapl-manual/raw/master/data/sensitivityAnalyses/2.1.allSteps_localRun.R) for this tutorial. And, **the analysis will start running in the background while we discuss what is happening in each step.** In your terminal type:
 <font size="4" face="courier" color="#ff7700">**************************************************************************</font>
 ```R
 download.file("https://raw.githubusercontent.com/ariadnamorales/phrapl-manual/master/data/exampleData/1.Subsampling_GridSearch_Post.R", destfile="1.Subsampling_GridSearch_Post.R")
