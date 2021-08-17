@@ -677,4 +677,4 @@ This table shows that model 4 (secondary contact) achieved a wAIC close to 1, me
 | <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_constMig.png" width="110%" height="110%" /> | 689.119 | 2 | 3 | 112.274 | 4.168e-25 | collapse_1 migration_1 | 4.639 | 1.109 | NA | NA |
 | <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_noMig.png" width="110%" height="110%" /> | 820.386 | 1 | 4 | 243.54 | 1.306e-53 | collapse_1 | NA | 0.845 | NA | NA |
 
-This is part a [real dataset of unisexual and sexual salamanders (*Ambystoma*)](Genome-specific histories of divergence and introgression between an allopolyploid unisexual salamander lineage and two ancestral sexual species).
+This is part of a [real dataset of unisexual and sexual salamanders (*Ambystoma*)](Genome-specific histories of divergence and introgression between an allopolyploid unisexual salamander lineage and two ancestral sexual species).
