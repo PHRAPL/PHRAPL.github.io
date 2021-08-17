@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tutorial 2 - Subsets
+title: Tutorial 2 - Sensitivity & Constant vs ancestral vs recent gene flow
 parent: NMNH-workshop
 nav_order: 2
 ---

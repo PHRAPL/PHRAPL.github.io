@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tutorial 1 - Setting up and running PHRAPL
+title: Tutorial 1 - Basis of demographic model selection PHRAPL
 parent: NMNH-workshop
 nav_order: 1
 ---
