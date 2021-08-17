@@ -33,9 +33,9 @@ Reference papers:
 
 ## **[Tutorial 2:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.ab.PHRAPL.tutorial2.html)** Divergence with gene flow vs. secondary contact
 
-* Part 1: Perform sensitivity analyses in subsets of loci. The analysis includes haploid and diploid data. Dataset of 2 populations *Plethodon* salamanders. <br/>
->> Do I need more data? This analysis can help you answer that question.
-* Part 2: Compare models with gene flow that occurred at different time intervals. Dataset of 2 unisexual and sexual species of *Ambystoma* salamanders. <br/>
+* **Part 1:** Perform sensitivity analyses in subsets of loci. The analysis includes haploid and diploid data. Dataset of 2 populations of *Plethodon* salamanders. <br/>
+> ** – Do I need more data? ** This analysis can help you answer that question.
+* **Part 2:** Compare models with gene flow that occurred at different time intervals. Dataset of 2 unisexual and sexual species of *Ambystoma* salamanders. <br/>
 
 Recommended reads of empirical examples:
 * Morales AE, Jackson N, Dewey T, O’Meara BC, Carstens BC (2017) [Speciation with gene flow in North American *Myotis* bats](https://academic.oup.com/sysbio/article/66/3/440/2682289). Systematic Biology. 66:440-452. <br/>
