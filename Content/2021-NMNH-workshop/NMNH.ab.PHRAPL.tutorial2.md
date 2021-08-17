@@ -9,7 +9,7 @@ nav_order: 2
 # Tutorial 2: Divergence with gene flow vs. secondary contact
 {: .no_toc }
 
-<font color='#ff7700'>This tutorial assumes that you have already followed and understand the steps of [Tutorial 1](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html)</font>
+**<font color='#ff7700'>This tutorial assumes that you have already followed and understand the steps of [Tutorial 1](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html) </font>**
 
 **The first part** of this tutorial will walk you through a `PHRAPL` analysis to **recalculate model weights (wAIC) in gradually increasing subsets of loci** and how to **handle haploid and diploid loci in the same analysis.** The figure below represents how results from these type of analyses could be summarized. Each column represents one model, each row represent a subset of loci (gradually increasing in number), and the color represents the model weight (wAIC analogous to model probability), that is higher as it gets darker.
 
@@ -388,10 +388,10 @@ With many more loci and models, you could build a plot such as [this one](https:
 For this section **<font color='#ff7700'>make sure that you understand how `PHRAPL` models are structured in an R object.</font>** You need to be familiar with what is a `migrationArray` object and its components: `$collapseMatrix`, `$n0multiplierMap`, `$growthMap`, `$migrationArray`. [See this explanation](https://phrapl.github.io/Content/GenerateSetModels/3c.exploreMigrationArray.html) if you need a reminder.
 * **Note**: the object `migrationArray`, is a `list` object that is **the model**, actually you can call it however you want. It includes an `array` called `$migrationArray` that includes the migration matrices within such model/object. This may be confusing but for historical reasons that is how it was developed...
 
+****
 ##### ** Only run the blocks of code highlighted with <font color="#ff7700">orange asterisks</font>. <font color="#ff7700"> Run the commands in your shell terminal (not in your R terminal).</font>**
 {: .no_toc}
 
-****
 ### Activate conda environment and load R
 {: .no_toc}
 
@@ -672,8 +672,8 @@ This table shows that model 4 (secondary contact) achieved a wAIC close to 1, me
 
 | models | AIC | params.K | rank | dAIC | wAIC | params.vector | m1_1.2 | t1_1.2 | m1_2.1 | m2_1.2 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_secCont.png" width="15%" height="15%" />  4 | 576.845979847045 | 2 | 1 | 0 | 0.999 | collapse_1 migration_1 | 2.550 | NA | 2.550 | NA |
-| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_ancMig.png" width="15%" height="15%" /> 3 | 672.559805879929 | 2 | 2 | 95.714 | 1.644e-21 | collapse_1 migration_1 | NA | NA | NA | 4.64 |
-| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_constMig.png" width="15%" height="15%" /> 2 | 689.119815425158 | 2 | 3 | 112.274 | 4.168e-25 | collapse_1 migration_1 | 4.639 | 1.109 | NA | NA |
-| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_noMig.png" width="15%" height="15%" /> 1 | 820.386276356992 | 1 | 4 | 243.54 | 1.306e-53 | collapse_1 | NA | 0.845 | NA | NA |
+| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_secCont.png" width="50%" height="50%" />  4 | 576.845979847045 | 2 | 1 | 0 | 0.999 | collapse_1 migration_1 | 2.550 | NA | 2.550 | NA |
+| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_ancMig.png" width="50%" height="50%" /> 3 | 672.559805879929 | 2 | 2 | 95.714 | 1.644e-21 | collapse_1 migration_1 | NA | NA | NA | 4.64 |
+| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_constMig.png" width="50%" height="50%" /> 2 | 689.119815425158 | 2 | 3 | 112.274 | 4.168e-25 | collapse_1 migration_1 | 4.639 | 1.109 | NA | NA |
+| <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_noMig.png" width="50%" height="50%" /> 1 | 820.386276356992 | 1 | 4 | 243.54 | 1.306e-53 | collapse_1 | NA | 0.845 | NA | NA |
 
