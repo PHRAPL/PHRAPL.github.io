@@ -25,17 +25,17 @@ August 16-20, 2021 – **<font color='#006579'>PHRAPL</font> workshop held on Au
 # Tutorials
 
 ## **[Tutorial 1:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html)** The basis of demographic model selection with PHRAPL 
-Simple example to get familiar with the basics of `PHRAPL` and analyze a simulated dataset of 3 populations. <br/>
+Simple example to get familiar with the basics of `PHRAPL` and analyze a simulated dataset of 3 populations. **Has gene flow been an important process in my study organism(s)?** Exploring a wide set of models, with and without gene flow, will help you to infer what parameters should be included in your set of modeles to be tested. <br/>
 Reference papers:
 * Jackson N, Morales AE, Carstens BC, O'Meara BC (2017) [PHRAPL: Phylogeographic Inference using Approximate likelihoods](https://academic.oup.com/sysbio/article/66/6/1045/2999288). Systematic Biology. 66:1045-1053. <br/>
 * Carstens BC, Morales AE, Jackson N, O’Meara BC (2017) [Objective choice of Phylogeographic Models](https://www.sciencedirect.com/science/article/pii/S1055790317303160?via%3Dihub). Molecular Phylogenetics and Evolution. 116:136-140. <br/>
 
 
 ## **[Tutorial 2:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.ab.PHRAPL.tutorial2.html)** Performing sensitivity analyses and fixing migration time 
-Example to explore models with different intervals of migration and perform sensitivity analyses in subsets of loci.
-* **Part 1:** Perform sensitivity analyses in subsets of loci. **Do I need more data?** This analysis can help you answer that question. Dataset of 2 populations of *Plethodon* salamanders, includes haploid and diploid loci. <br/>
 
-* **Part 2:** Compare models with gene flow that occurred at different time intervals. Dataset of 2 unisexual and sexual species of *Ambystoma* salamanders. <br/>
+* **Part 1:** Perform sensitivity analyses in subsets of loci. * **Do I need more data?** * This analysis can help you answer that question. Dataset of 2 populations of *Plethodon* salamanders, includes haploid and diploid loci. <br/>
+
+* **Part 2:** Compare models with gene flow that occurred at different time intervals. * **Gene flow has occurred among my study organisms.** * Here you will be able to infer * **"when it started or stopped"** * Has it been constant throughout time?, did it occur only during incipient stages of divergence or did it occur just recently?. Dataset of 2 unisexual and sexual species of *Ambystoma* salamanders. <br/>
 
 Recommended reads of empirical examples:
 * Morales AE, Jackson N, Dewey T, O’Meara BC, Carstens BC (2017) [Speciation with gene flow in North American *Myotis* bats](https://academic.oup.com/sysbio/article/66/3/440/2682289). Systematic Biology. 66:440-452. <br/>
