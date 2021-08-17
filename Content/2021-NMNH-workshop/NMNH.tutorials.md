@@ -26,6 +26,7 @@ August 16-20, 2021 – **<font color='#006579'>PHRAPL</font> workshop held on Au
 
 ## **[Tutorial 1:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html)** The basis of demographic model selection with PHRAPL 
 Simple example to get familiar with the basics of `PHRAPL` and analyze a simulated dataset of 3 populations. **Has gene flow been an important process in my study organism(s)?** Exploring a wide set of models, with and without gene flow, will help you to infer what parameters should be included in your set of models to be tested. <br/>
+
 Reference papers:
 * Jackson N, Morales AE, Carstens BC, O'Meara BC (2017) [PHRAPL: Phylogeographic Inference using Approximate likelihoods](https://academic.oup.com/sysbio/article/66/6/1045/2999288). Systematic Biology. 66:1045-1053. <br/>
 * Carstens BC, Morales AE, Jackson N, O’Meara BC (2017) [Objective choice of Phylogeographic Models](https://www.sciencedirect.com/science/article/pii/S1055790317303160?via%3Dihub). Molecular Phylogenetics and Evolution. 116:136-140. <br/>
@@ -43,7 +44,7 @@ Recommended reads of empirical examples:
 * Mays H, Oehler D, Morrison K, Morales A, Lycans A, et al., Weakley L (2019) [Phylogeography, population structure, gene flow and species delimitation in Rockhopper penguins (*Eudyptes chrysocome* and *Eudyptes moseleyi*)](https://academic.oup.com/jhered/article/110/7/801/5583958?login=true). Journal of Heredity. esz051, doi.org/10.1093/jhered/esz051. <br/>
 
 ## **[Tutorial 3:]()** Species delimitation
-Example for how to test the existance of 1, 2, or 3 species using the first three models from Tutorial 1. <br/>
+Example for how to test the existance of 1, 2, or 3 species using the first three models from Tutorial 1. **Is there enough information in my data to infer how many groups are diverging independently?** <br/>
 
 Reference papers:
 * Jackson N, Carstens BC, Morales AE, O’Meara BC (2017) [Species delimitation with gene flow](https://academic.oup.com/sysbio/article/66/5/799/2726792?searchresult=1). Systematic Biology. 66:799-812.
