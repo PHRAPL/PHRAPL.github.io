@@ -33,7 +33,7 @@ Reference papers:
 
 ## **[Tutorial 2:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.ab.PHRAPL.tutorial2.html)** Performing sensitivity analyses and fixing migration time 
 Example to explore models with different intervals of migration and perform sensitivity analyses in subsets of loci.
-* **Part 1:** Perform sensitivity analyses in subsets of loci. ** Do I need more data? ** This analysis can help you answer that question. Dataset of 2 populations of *Plethodon* salamanders, includes haploid and diploid loci. <br/>
+* **Part 1:** Perform sensitivity analyses in subsets of loci. **Do I need more data?** This analysis can help you answer that question. Dataset of 2 populations of *Plethodon* salamanders, includes haploid and diploid loci. <br/>
 
 * **Part 2:** Compare models with gene flow that occurred at different time intervals. Dataset of 2 unisexual and sexual species of *Ambystoma* salamanders. <br/>
 
