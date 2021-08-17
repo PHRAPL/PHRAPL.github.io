@@ -26,14 +26,28 @@ August 16-20, 2021 – **<font color='#006579'>PHRAPL</font> workshop held on Au
 
 ## **[Tutorial 1:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html)** The basis of demographic model selection with PHRAPL 
 Simple example to get familiar with the basics of `PHRAPL` and analyze a simulated dataset of 3 populations. <br/>
+Reference papers:
+* Jackson N, Morales AE, Carstens BC, O'Meara BC (2017) [PHRAPL: Phylogeographic Inference using Approximate likelihoods](https://academic.oup.com/sysbio/article/66/6/1045/2999288). Systematic Biology. 66:1045-1053. <br/>
+* Carstens BC, Morales AE, Jackson N, O’Meara BC (2017) [Objective choice of Phylogeographic Models](https://www.sciencedirect.com/science/article/pii/S1055790317303160?via%3Dihub). Molecular Phylogenetics and Evolution. 116:136-140. <br/>
 
 
-## **[Tutorial 2:]()** Divergence with gene flow vs. secondary contact
-Example to perform sensitivity analyses in subsets of loci. Dataset of 2 populations Plethodon salamanders. <br/>
+## **[Tutorial 2:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.ab.PHRAPL.tutorial2.html)** Divergence with gene flow vs. secondary contact
 
+* Part 1: Perform sensitivity analyses in subsets of loci. The analysis includes haploid and diploid data. Dataset of 2 populations *Plethodon* salamanders. <br/>
+>> Do I need more data? This analysis can help you answer that question.
+* Part 2: Compare models with gene flow that occurred at different time intervals. Dataset of 2 unisexual and sexual species of *Ambystoma* salamanders. <br/>
+
+Recommended reads of empirical examples:
+* Morales AE, Jackson N, Dewey T, O’Meara BC, Carstens BC (2017) [Speciation with gene flow in North American *Myotis* bats](https://academic.oup.com/sysbio/article/66/3/440/2682289). Systematic Biology. 66:440-452. <br/>
+* Denton RD, Morales AE, Gibbs HL (2018) [Genome-specific histories of divergence and introgression between an allopolyploid unisexual salamander lineage and two ancestral sexual species](https://onlinelibrary.wiley.com/doi/full/10.1111/evo.13528). Evolution.  72:1689–1700. <br/>
+* Mays H, Oehler D, Morrison K, Morales A, Lycans A, et al., Weakley L (2019) [Phylogeography, population structure, gene flow and species delimitation in Rockhopper penguins (*Eudyptes chrysocome* and *Eudyptes moseleyi*)](https://academic.oup.com/jhered/article/110/7/801/5583958?login=true). Journal of Heredity. esz051, doi.org/10.1093/jhered/esz051. <br/>
 
 ## **[Tutorial 3:]()** Species delimitation
 Example for how to test the existance of 1, 2, or 3 species using the first three models from Tutorial 1. <br/>
+
+Reference papers:
+* Jackson N, Carstens BC, Morales AE, O’Meara BC (2017) [Species delimitation with gene flow](https://academic.oup.com/sysbio/article/66/5/799/2726792?searchresult=1). Systematic Biology. 66:799-812.
+
 
 ---
 ## Workshop Info
