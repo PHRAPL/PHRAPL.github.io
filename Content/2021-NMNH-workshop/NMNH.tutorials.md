@@ -39,9 +39,10 @@ Reference papers:
 * **Part 2:** Compare models with gene flow that occurred at different time intervals. **Gene flow has occurred among divergent groups/populations/species. When did it start or stop?"** This analysis will help to address such a question. Dataset of 2 unisexual and sexual species of *Ambystoma* salamanders. <br/>
 
 Recommended reads of empirical examples:
-* Morales AE, Jackson N, Dewey T, O’Meara BC, Carstens BC (2017) [Speciation with gene flow in North American *Myotis* bats](https://academic.oup.com/sysbio/article/66/3/440/2682289). Systematic Biology. 66:440-452. <br/>
-* Denton RD, Morales AE, Gibbs HL (2018) [Genome-specific histories of divergence and introgression between an allopolyploid unisexual salamander lineage and two ancestral sexual species](https://onlinelibrary.wiley.com/doi/full/10.1111/evo.13528). Evolution.  72:1689–1700. <br/>
-* Mays H, Oehler D, Morrison K, Morales A, Lycans A, et al., Weakley L (2019) [Phylogeography, population structure, gene flow and species delimitation in Rockhopper penguins (*Eudyptes chrysocome* and *Eudyptes moseleyi*)](https://academic.oup.com/jhered/article/110/7/801/5583958?login=true). Journal of Heredity. esz051, doi.org/10.1093/jhered/esz051. <br/>
+* **Bats** – Morales AE, Jackson N, Dewey T, O’Meara BC, Carstens BC (2017) [Speciation with gene flow in North American *Myotis* bats](https://academic.oup.com/sysbio/article/66/3/440/2682289). Systematic Biology. 66:440-452. <br/>
+* **Salamanders** – Denton RD, Morales AE, Gibbs HL (2018) [Genome-specific histories of divergence and introgression between an allopolyploid unisexual salamander lineage and two ancestral sexual species](https://onlinelibrary.wiley.com/doi/full/10.1111/evo.13528). Evolution.  72:1689–1700. <br/>
+* **Penguins** – Mays H, Oehler D, Morrison K, Morales A, Lycans A, et al., Weakley L (2019) [Phylogeography, population structure, gene flow and species delimitation in Rockhopper penguins (*Eudyptes chrysocome* and *Eudyptes moseleyi*)](https://academic.oup.com/jhered/article/110/7/801/5583958?login=true). Journal of Heredity. esz051, doi.org/10.1093/jhered/esz051. <br/>
+* **Plants** – Ruffley M, Smith ML, Espíndola A, Carstens BC, Sullivan J, Tank DC. [Combining allele frequency and tree-based approaches improves phylogeographic inference from natural history collections](https://doi.org/10.1111/mec.14491). Mol Ecol. 2018; 27: 1012– 1024.
 
 ## **[Tutorial 3:]()** Species delimitation
  **Is there enough information in my data to infer how many groups are diverging independently?** This example will guide you for how to test the existance of 1, 2, or 3 species. Simulated data with the first three models from Tutorial 1. <br/>
