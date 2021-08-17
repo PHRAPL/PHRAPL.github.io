@@ -418,8 +418,8 @@ R CMD BATCH 2.2.buildModels_loadData_Subsampling_GridSearch_Post.R > 2.2.buildMo
 ### How to generate models with different time intervals of gene flow
 To generate such models, we need to start with "traditional" `PHRAPL` models with and without gene flow. 
  
-```
 In this tutorial we, start with 2 models.
+
 ```r
 ## load R (if you haven´t)
 ## Load libraries
