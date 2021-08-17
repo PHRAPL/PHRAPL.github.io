@@ -19,7 +19,7 @@ Then, **the second part**, will show you how to **compare models of no gene flow
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/Figure.divWgeneFlow_vs_ancGeneFlow.png?raw=TRUE"/>
 </kbd>
 
-This is what we did in our ["Speciation with Gene Flow in North American *Myotis* Bats"](https://academic.oup.com/sysbio/article/66/3/440/2682289) paper. For this tutorial, we use a smaller example dataset of 2 populations *Plethodon* salamanders. **We have highlighted with <font color="#ff7700">orange asterisks</font> those blocks of code that constitute the minimum steps that must be followed. <font color="#ff7700">Run all the commands in your shell terminal (not in your R terminal).</font> You can run Part 2 without having to run Part 1.**
+This is what we did in our ["Speciation with Gene Flow in North American *Myotis* Bats"](https://academic.oup.com/sysbio/article/66/3/440/2682289) paper. For the first part of this tutorial, we use a smaller example dataset of 5 loci from 2 populations *Plethodon* salamanders. In the second part, we analyze a bigger dataset of 1200 loci from 2 unisexual and sexual species of *Ambystoma* salamanders. **We have highlighted with <font color="#ff7700">orange asterisks</font> those blocks of code that constitute the minimum steps that must be followed. <font color="#ff7700">Run all the commands in your shell terminal (not in your R terminal).</font> You can run Part 2 without having to run Part 1.**
 
 ---
 1. TOC
