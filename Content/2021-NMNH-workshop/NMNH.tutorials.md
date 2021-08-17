@@ -32,7 +32,7 @@ Reference papers:
 
 
 ## **[Tutorial 2:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.ab.PHRAPL.tutorial2.html)** Divergence with gene flow vs. secondary contact
-
+Example to explore models with different intervals of migration and perform sensitivity analyses in subsets of loci.
 * **Part 1:** Perform sensitivity analyses in subsets of loci. The analysis includes haploid and diploid data. Dataset of 2 populations of *Plethodon* salamanders. <br/>
 > ** – Do I need more data? ** This analysis can help you answer that question.
 * **Part 2:** Compare models with gene flow that occurred at different time intervals. Dataset of 2 unisexual and sexual species of *Ambystoma* salamanders. <br/>
