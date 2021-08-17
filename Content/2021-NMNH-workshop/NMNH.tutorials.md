@@ -44,7 +44,7 @@ Recommended reads of empirical examples:
 * Mays H, Oehler D, Morrison K, Morales A, Lycans A, et al., Weakley L (2019) [Phylogeography, population structure, gene flow and species delimitation in Rockhopper penguins (*Eudyptes chrysocome* and *Eudyptes moseleyi*)](https://academic.oup.com/jhered/article/110/7/801/5583958?login=true). Journal of Heredity. esz051, doi.org/10.1093/jhered/esz051. <br/>
 
 ## **[Tutorial 3:]()** Species delimitation
-Example for how to test the existance of 1, 2, or 3 species using the first three models from Tutorial 1. **Is there enough information in my data to infer how many groups are diverging independently?** <br/>
+ **Is there enough information in my data to infer how many groups are diverging independently?** This example will guide you for how to test the existance of 1, 2, or 3 species. Simulated data with the first three models from Tutorial 1. <br/>
 
 Reference papers:
 * Jackson N, Carstens BC, Morales AE, O’Meara BC (2017) [Species delimitation with gene flow](https://academic.oup.com/sysbio/article/66/5/799/2726792?searchresult=1). Systematic Biology. 66:799-812.
