@@ -650,7 +650,7 @@ AddEventToMigrationArray(migrationArray[[1]], 2)
 
 Once you have a set of models, the analyses (subsampling, GridSearch, and post-processing) are exactly as decribed in other tutorials (See tutorial 1 for a detailed explanation of each step).
 
-The [script that started running at beginning of this tutorial](https://github.com/ariadnamorales/phrapl-manual/raw/master/data/tutorial2.2/scripts/2.2.buildModels_loadData_Subsampling_GridSearch_Post.R), includes all the requred steps to calculate wAICs and compare models. Now we are going to load and explore the output.
+The [script that started running at beginning of part 2 of this tutorial](https://github.com/ariadnamorales/phrapl-manual/raw/master/data/tutorial2.2/scripts/2.2.buildModels_loadData_Subsampling_GridSearch_Post.R), includes all the requred steps to calculate wAICs and compare models. Now we are going to load and explore the output.
 
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
