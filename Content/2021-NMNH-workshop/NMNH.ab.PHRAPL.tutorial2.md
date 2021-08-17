@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 
-# Tutorial 2: Performing sensitivity analyses and fixing migration time 
+# Tutorial 2: Sensitivity analyses and fixing migration time 
 {: .no_toc }
 
 **<font color='#ff7700'>This tutorial assumes that you have already followed and understand the steps of <a href="https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html">Tutorial 1</a></font>**

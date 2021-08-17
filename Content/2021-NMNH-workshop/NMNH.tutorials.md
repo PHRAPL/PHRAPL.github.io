@@ -25,7 +25,7 @@ August 16-20, 2021 – **<font color='#006579'>PHRAPL</font> workshop held on Au
 # Tutorials
 
 ## **[Tutorial 1:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.aa.PHRAPL.tutorial1.html)** The basis of demographic model selection with PHRAPL 
-Simple example to get familiar with the basics of `PHRAPL` and analyze a simulated dataset of 3 populations. **Has gene flow been an important process in my study organism(s)?** Exploring a wide set of models, with and without gene flow, will help you to infer what parameters should be included in your set of modeles to be tested. <br/>
+Simple example to get familiar with the basics of `PHRAPL` and analyze a simulated dataset of 3 populations. **Has gene flow been an important process in my study organism(s)?** Exploring a wide set of models, with and without gene flow, will help you to infer what parameters should be included in your set of models to be tested. <br/>
 Reference papers:
 * Jackson N, Morales AE, Carstens BC, O'Meara BC (2017) [PHRAPL: Phylogeographic Inference using Approximate likelihoods](https://academic.oup.com/sysbio/article/66/6/1045/2999288). Systematic Biology. 66:1045-1053. <br/>
 * Carstens BC, Morales AE, Jackson N, O’Meara BC (2017) [Objective choice of Phylogeographic Models](https://www.sciencedirect.com/science/article/pii/S1055790317303160?via%3Dihub). Molecular Phylogenetics and Evolution. 116:136-140. <br/>
