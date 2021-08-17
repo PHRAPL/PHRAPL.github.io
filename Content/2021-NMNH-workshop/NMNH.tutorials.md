@@ -31,7 +31,7 @@ Reference papers:
 * Carstens BC, Morales AE, Jackson N, O’Meara BC (2017) [Objective choice of Phylogeographic Models](https://www.sciencedirect.com/science/article/pii/S1055790317303160?via%3Dihub). Molecular Phylogenetics and Evolution. 116:136-140. <br/>
 
 
-## **[Tutorial 2:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.ab.PHRAPL.tutorial2.html)** Performing sensitivity analyses and fixing migration time 
+## **[Tutorial 2:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.ab.PHRAPL.tutorial2.html)** Sensitivity analyses and fixing migration time 
 
 * **Part 1:** Perform sensitivity analyses in subsets of loci. **Do I need more data?** This analysis can help you answer that question. Dataset of 2 populations of *Plethodon* salamanders, includes haploid and diploid loci. <br/>
 
