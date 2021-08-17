@@ -650,7 +650,7 @@ AddEventToMigrationArray(migrationArray[[1]], 2)
 
 Once you have a set of models, the analyses (subsampling, GridSearch, and post-processing) are exactly as decribed in other tutorials (See tutorial 1 for a detailed explanation of each step).
 
-The [script that started running at beginning of this tutorial](https://github.com/ariadnamorales/phrapl-manual/raw/master/data/tutorial2.2/scripts/2.2.buildModels_loadData_Subsampling_GridSearch_Post.R), includes all the requred steps to calculate wAICs and compare models. 
+The [script that started running at beginning of this tutorial](https://github.com/ariadnamorales/phrapl-manual/raw/master/data/tutorial2.2/scripts/2.2.buildModels_loadData_Subsampling_GridSearch_Post.R), includes all the requred steps to calculate wAICs and compare models. Now we are going to load and explore the output.
 
 <font size="4" face="courier" color="#ff7700">*****************************************************************</font>
 
@@ -658,7 +658,7 @@ The [script that started running at beginning of this tutorial](https://github.c
 ## Load libraries
 library(phrapl)	
 
-## load output objectes
+## load output objects
 load(url("https://github.com/ariadnamorales/phrapl-manual/raw/master/data/tutorial2.2/tutorial_2.2_outputSummary.rda"))
 
 ## explore wAIC values
@@ -677,3 +677,4 @@ This table shows that model 4 (secondary contact) achieved a wAIC close to 1, me
 | <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_constMig.png" width="110%" height="110%" /> | 689.119 | 2 | 3 | 112.274 | 4.168e-25 | collapse_1 migration_1 | 4.639 | 1.109 | NA | NA |
 | <img src="https://github.com/ariadnamorales/phrapl-manual/raw/master/images/model_2pops_noMig.png" width="110%" height="110%" /> | 820.386 | 1 | 4 | 243.54 | 1.306e-53 | collapse_1 | NA | 0.845 | NA | NA |
 
+This is part a [real dataset of unisexual and sexual salamanders (*Ambystoma*)](Genome-specific histories of divergence and introgression between an allopolyploid unisexual salamander lineage and two ancestral sexual species).
