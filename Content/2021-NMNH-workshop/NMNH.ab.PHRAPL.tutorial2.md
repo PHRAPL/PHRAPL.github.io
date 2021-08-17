@@ -19,7 +19,7 @@ Then, **the second part**, will show you how to **compare models of no gene flow
 <img src="https://github.com/ariadnamorales/phrapl-manual/blob/master/images/Figure.divWgeneFlow_vs_ancGeneFlow.png?raw=TRUE"/>
 </kbd>
 
-This is what we did in our ["Speciation with Gene Flow in North American *Myotis* Bats"](https://academic.oup.com/sysbio/article/66/3/440/2682289) paper. For the first part of this tutorial, we use a smaller example dataset of 5 loci from 2 populations *Plethodon* salamanders. In the second part, we analyze a bigger dataset of 1200 loci from 2 unisexual and sexual species of *Ambystoma* salamanders. **We have highlighted with <font color="#ff7700">orange asterisks</font> those blocks of code that constitute the minimum steps that must be followed. <font color="#ff7700">Run all the commands in your shell terminal (not in your R terminal).</font> You can run Part 2 without having to run Part 1.**
+This is what we did in our ["Speciation with Gene Flow in North American *Myotis* Bats"](https://academic.oup.com/sysbio/article/66/3/440/2682289) paper. But for this tutorial, we use smaller datasets. For the first part, we use an example dataset of 5 loci from 2 populations *Plethodon* salamanders. In the second part, we analyze a bigger dataset of 1200 loci from 2 unisexual and sexual species of *Ambystoma* salamanders. **We have highlighted with <font color="#ff7700">orange asterisks</font> those blocks of code that constitute the minimum steps that must be followed. <font color="#ff7700">Run all the commands in your shell terminal (not in your R terminal).</font> You can run Part 2 without having to run Part 1.**
 
 ---
 1. TOC
@@ -454,20 +454,20 @@ $complete
 
 $n0multiplierMap	
      [,1]
-[1,]    1					## Same population size in group/population/species 1  --> "1" 
-[2,]    1					## Same population size in group/population/species 2  --> "1" 
+[1,]    1				## Same population size in group/population/species 1  --> "1" 
+[2,]    1				## Same population size in group/population/species 2  --> "1" 
 
 $growthMap
      [,1]
-[1,]    0					## No changes in population size in group/population/species 1  --> "0" 
-[2,]    0					## No changes in population size in group/population/species 2  --> "0" 
+[1,]    0				## No changes in population size in group/population/species 1  --> "0" 
+[2,]    0				## No changes in population size in group/population/species 2  --> "0" 
 					  
 $migrationArray
-, , 1					     ## There is only one ", , 1" interval assigned to gene flow
-									 ## therefore, it is asummed to be constant
+, , 1					## There is only one ", , 1" interval assigned to gene flow
+						## therefore, it is asummed to be constant
      [,1] [,2]		
-[1,]   NA    0		 ## No gene flow from group [1,] to group [,2] --> "0" 
-[2,]    0   NA		 ## No gene flow from group [2,] to group [,1] --> "0" 
+[1,]   NA    0		 	## No gene flow from group [1,] to group [,2] --> "0" 
+[2,]    0   NA		 	## No gene flow from group [2,] to group [,1] --> "0" 
 ```
 #### Constant gene flow
 
@@ -498,8 +498,8 @@ $growthMap
 [2,]    0			## No changes in population size in group/population/species 2  --> "0" 
 				
 $migrationArray	
-, , 1							## There is only one ", , 1" interval assigned to gene flow
-									## therefore, it is asummed to be constant.
+, , 1				## There is only one ", , 1" interval assigned to gene flow
+					## therefore, it is asummed to be constant.
      [,1] [,2]		## It is asymmetric because
 [1,]   NA    1		## there is gene flow from group [1,] to group [,2]  --> "1" 
 [2,]    0   NA		## but no gene flow from group [2,] to group [,1]    --> "0" 
@@ -546,12 +546,12 @@ Therefore, `$migrationArray` is expanded from one to two matrices, where the fis
 
 ```r
 $migrationArray
-, , 1							## This is new matrix in the model
-     [,1] [,2]		## It has 0 because we set "migrationMat=0" in "AddEventToMigrationArray"
-[1,]   NA    0		## therefore, it is assumed that there is no gene flow in the present.
+, , 1					## This is new matrix in the model
+     [,1] [,2]			## It has 0 because we set "migrationMat=0" in "AddEventToMigrationArray"
+[1,]   NA    0			## therefore, it is assumed that there is no gene flow in the present.
 [2,]    0   NA
 
-, , 2								## This is the matrix that was already in the model.							
+, , 2					## This is the matrix that was already in the model.							
      [,1] [,2]			## therefore, it will be assumed that gene flow
 [1,]   NA    1			## only happened in the past.
 [2,]    0   NA
@@ -622,12 +622,12 @@ $growthMap
 [2,]    0    0
 
 $migrationArray
-, , 1										## This is new matrix in the model
-     [,1] [,2]					## It has 0 because we set "migrationMat=0" 
+, , 1							## This is new matrix in the model
+     [,1] [,2]					## It has 0 because we set "migrationMat=1" 
 [1,]   NA    1					## in "AddEventToMigrationArray"
 [2,]    1   NA					## therefore, there is gene flow in the present.
 
-, , 2										## This is the matrix that was already in the model.
+, , 2							## This is the matrix that was already in the model.
      [,1] [,2]					## therefore, it will be assumed that there wasn't gene flow
 [1,]   NA    0					## in the past.
 [2,]    0   NA
