@@ -44,7 +44,7 @@ Recommended reads of empirical examples:
 * **Penguins** – Mays H, Oehler D, Morrison K, Morales A, Lycans A, et al., Weakley L (2019) [Phylogeography, population structure, gene flow and species delimitation in Rockhopper penguins (*Eudyptes chrysocome* and *Eudyptes moseleyi*)](https://academic.oup.com/jhered/article/110/7/801/5583958?login=true). Journal of Heredity. esz051, doi.org/10.1093/jhered/esz051. <br/>
 * **Plants** – Ruffley M, Smith ML, Espíndola A, Carstens BC, Sullivan J, Tank DC. [Combining allele frequency and tree-based approaches improves phylogeographic inference from natural history collections](https://doi.org/10.1111/mec.14491). Mol Ecol. 2018; 27: 1012– 1024.
 
-## **[Tutorial 3:]()** Species delimitation
+## **[Tutorial 3:](https://phrapl.github.io/Content/2021-NMNH-workshop/NMNH.ac.PHRAPL.tutorial3.html)** Species delimitation
  **Is there enough information in my data to infer how many groups are diverging independently?** This example will guide you for how to test the existance of 1, 2, or 3 species. Simulated data with the first three models from Tutorial 1. <br/>
 
 Reference papers:
